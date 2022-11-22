@@ -1,5 +1,16 @@
 package me.justahuman.spiritsunchained.managers;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
+import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.implementation.items.altar.AltarRecipe;
+import io.github.thebusybiscuit.slimefun4.implementation.items.altar.AncientAltar;
+import io.github.thebusybiscuit.slimefun4.implementation.items.altar.AncientPedestal;
+import io.github.thebusybiscuit.slimefun4.implementation.items.electric.AbstractEnergyProvider;
+import io.github.thebusybiscuit.slimefun4.implementation.items.tools.GoldPan;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
@@ -14,6 +25,9 @@ import me.justahuman.spiritsunchained.utils.PlayerUtils;
 import me.justahuman.spiritsunchained.utils.SpiritTraits;
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
 
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineFuel;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -31,7 +45,14 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -68,6 +89,9 @@ public class CommandManager implements TabExecutor {
         else if (useCommand("Altar", player, 0, 2, args)) {
             return visualizeAltar(player, args[1]);
         }
+        else if (useCommand("GenerateEMI", player, 0, 1, args)) {
+            return generateEMI();
+        }
         else {
             return false;
         }
@@ -88,6 +112,7 @@ public class CommandManager implements TabExecutor {
                 add.put("SummonSpirit", 0);
                 add.put("EditItem", 0);
                 add.put("ResetCooldowns", 0);
+                add.put("GenerateEMI", 0);
             }
 
             else if (args.length == 2) {
@@ -304,6 +329,164 @@ public class CommandManager implements TabExecutor {
         }
         SpiritTraits.resetCooldown(player);
         return true;
+    }
+
+    private boolean generateEMI() {
+        final JSONObject jsonObject = getData();
+        for (SlimefunItem slimefunItem : Slimefun.getRegistry().getAllSlimefunItems()) {
+            if (!(slimefunItem.getAddon() instanceof Slimefun)) {
+                continue;
+            }
+            final JSONArray recipeCategory = (JSONArray) jsonObject.getOrDefault(slimefunItem.getId(), new JSONArray());
+            if (slimefunItem instanceof AContainer aContainer) {
+                for (MachineRecipe machineRecipe : aContainer.getMachineRecipes()) {
+                    if (checkRecipe(null, machineRecipe.getInput())) {
+                        continue;
+                    }
+                    final ItemStack[] input = machineRecipe.getInput();
+                    final ItemStack[] output = machineRecipe.getOutput();
+                    final int energyUsed = machineRecipe.getTicks() * aContainer.getEnergyConsumption() * -1;
+                    final JSONObject recipe = fillRecipe(input, output, energyUsed);
+                    recipeCategory.add(recipe);
+                }
+            } else if (slimefunItem instanceof MultiBlockMachine multiBlockMachine) {
+                final List<ItemStack[]> recipes = multiBlockMachine.getRecipes();
+                for (ItemStack[] input : recipes) {
+                    if (recipes.indexOf(input) % 2 != 0 || checkRecipe(null, input)) {
+                        continue;
+                    }
+                    final ItemStack[] output = recipes.get(recipes.indexOf(input) + 1);
+                    final JSONObject recipe = fillRecipe(input, output, null);
+                    recipeCategory.add(recipe);
+                }
+            } else if (slimefunItem instanceof GoldPan goldPan) {
+                final List<ItemStack> recipes = goldPan.getDisplayRecipes();
+                for (ItemStack input : recipes) {
+                    if (recipes.indexOf(input) % 2 != 0 || checkRecipe(Collections.singletonList(input), null)) {
+                        continue;
+                    }
+                    final ItemStack output = recipes.get(recipes.indexOf(input) + 1);
+                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, null);
+                    recipeCategory.add(recipe);
+                }
+            } else if (slimefunItem instanceof AbstractEnergyProvider abstractEnergyProvider) {
+                final Set<MachineFuel> recipes = abstractEnergyProvider.getFuelTypes();
+                for (MachineFuel machineFuel : recipes) {
+                    if (checkRecipe(Collections.singletonList(machineFuel.getInput()), null)) {
+                        continue;
+                    }
+                    final ItemStack input = machineFuel.getInput();
+                    final ItemStack output = machineFuel.getOutput();
+                    final int energy = machineFuel.getTicks() * abstractEnergyProvider.getEnergyProduction();
+                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, energy);
+                    recipeCategory.add(recipe);
+                }
+            } else if (slimefunItem instanceof AncientAltar ancientAltar) {
+                final List<AltarRecipe> recipes = ancientAltar.getRecipes();
+                for (AltarRecipe altarRecipe : recipes) {
+                    if (checkRecipe(altarRecipe.getInput(), null)) {
+                        continue;
+                    }
+                    final List<ItemStack> incorrectOrder = altarRecipe.getInput();
+                    final List<ItemStack> listInput = new ArrayList<>();
+                    listInput.add(incorrectOrder.get(0));
+                    listInput.add(incorrectOrder.get(1));
+                    listInput.add(incorrectOrder.get(2));
+                    listInput.add(incorrectOrder.get(7));
+                    listInput.add(altarRecipe.getCatalyst());
+                    listInput.add(incorrectOrder.get(3));
+                    listInput.add(incorrectOrder.get(6));
+                    listInput.add(incorrectOrder.get(5));
+                    ItemStack[] input = new ItemStack[listInput.size()];
+                    input = listInput.toArray(input);
+                    final ItemStack output = altarRecipe.getOutput();
+                    final JSONObject recipe = fillRecipe(input, new ItemStack[]{output}, null);
+                    recipeCategory.add(recipe);
+                }
+            }
+            if (! recipeCategory.isEmpty()) {
+                jsonObject.put(slimefunItem.getId(), recipeCategory);
+            }
+        }
+        writeJson(SpiritsUnchained.getInstance().getDataFolder().getPath() + "/emi.json", jsonObject.toJSONString());
+        return true;
+    }
+
+    private boolean checkRecipe(List<ItemStack> checkList, ItemStack[] checkArray) {
+        boolean toReturn = false;
+        if (checkList != null) {
+            for (ItemStack itemStack : checkList) {
+                toReturn = toReturn || (SlimefunItem.getByItem(itemStack) != null && SlimefunItem.getByItem(itemStack).getAddon() != Slimefun.instance());
+            }
+        }
+        if (checkArray != null) {
+            for (ItemStack itemStack : checkArray) {
+                toReturn = toReturn || (SlimefunItem.getByItem(itemStack) != null && SlimefunItem.getByItem(itemStack).getAddon() != Slimefun.instance());
+            }
+        }
+        return toReturn;
+    }
+
+    private JSONObject fillRecipe(ItemStack[] input, ItemStack[] output, Integer energy) {
+        final JSONObject recipe = new JSONObject();
+        final List<String> inputs = processList(input);
+        final List<String> outputs = processList(output);
+        recipe.put("inputs", inputs);
+        recipe.put("outputs", outputs);
+        if (energy != null) {
+            recipe.put("energy", energy);
+        }
+        return recipe;
+    }
+
+    private List<String> processList(ItemStack[] process) {
+        final List<String> processed = new ArrayList<>();
+        for (ItemStack item : process) {
+            if (SlimefunItem.getByItem(item) != null) {
+                final SlimefunItem slimefunItem = SlimefunItem.getByItem(item);
+                processed.add(slimefunItem.getId() + ":" + item.getAmount());
+            } else if (item != null) {
+                if (item.getType() == Material.EXPERIENCE_BOTTLE && item.hasItemMeta() && item.getItemMeta().hasDisplayName()) {
+                    final SlimefunItem slimefunItem = SlimefunItems.FLASK_OF_KNOWLEDGE.getItem();
+                    processed.add("FILLED_" + slimefunItem.getId() + ":" + item.getAmount());
+                } else {
+                    processed.add(item.getType().name().toLowerCase() + ":" + item.getAmount());
+                }
+            } else {
+                processed.add("");
+            }
+        }
+        return processed;
+    }
+
+    public static JSONObject getData() {
+        //JSON parser object to parse read file
+        final JSONParser jsonParser = new JSONParser();
+
+        try (FileReader reader = new FileReader(SpiritsUnchained.getInstance().getDataFolder().getPath() + "/emi.json"))
+        {
+            //Return the Player's
+            return (JSONObject) jsonParser.parse(reader);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+        return new JSONObject();
+    }
+
+    public static void writeJson(String path, String write) {
+        try (final FileWriter file = new FileWriter(path)) {
+            //Update the File
+            file.write(write);
+            file.flush();
+
+        } catch (IOException e) {
+            Log("Could not Write to the File: " + path);
+            e.printStackTrace();
+        }
+    }
+
+    public static void Log(String log) {
+        SpiritsUnchained.getInstance().getLogger().info(log);
     }
 
     private boolean sendError(Player player, String path) {
