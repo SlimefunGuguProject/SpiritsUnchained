@@ -397,6 +397,7 @@ public class CommandManager implements TabExecutor {
                     listInput.add(incorrectOrder.get(3));
                     listInput.add(incorrectOrder.get(6));
                     listInput.add(incorrectOrder.get(5));
+                    listInput.add(incorrectOrder.get(4));
                     ItemStack[] input = new ItemStack[listInput.size()];
                     input = listInput.toArray(input);
                     final ItemStack output = altarRecipe.getOutput();
@@ -408,6 +409,7 @@ public class CommandManager implements TabExecutor {
                 jsonObject.put(slimefunItem.getId(), recipeCategory);
             }
         }
+
         writeJson(SpiritsUnchained.getInstance().getDataFolder().getPath() + "/emi.json", jsonObject.toJSONString());
         return true;
     }
