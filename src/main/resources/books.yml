@@ -1,28 +1,29 @@
 GUIDE_BOOK:
-  title: Spirit Guide Book
+  title: 灵魂巧匠指南
   author: JustAHuman_xD
   pages:
     0:
-      - "   <u>Table of Contents:<reset>"
+      - "   <u>目录:<reset>"
       - ""
-      - "Finding Spirits: 2-5"
+      - "搜寻灵魂: 2-5"
       - ""
-      - "Catching Spirits: 6-8"
+      - "捕捉灵魂: 6-8"
       - ""
-      - "Taming Spirits: 9-14"
+      - "驯化灵魂: 9-14"
       - ""
       - "Passing on Spirits: 15-20"
       - ""
-      - "Spirit Traits: 21-22"
+      - "灵魂特性: 21-22"
     1:
-      - " <u>Finding Spirits I<reset>"
+      - " <u>搜寻灵魂 第一部分<reset>"
       - ""
-      - "#1. <u>Spirit Lenses<reset>, before you can start to Catch Spirits you need to be able to See them. Spirit Lenses will grant you that ability until you can make your own Spirit Rune and imbue a Helmet with it."
+      - "#1. <u>灵魂棱镜<reset>"
+      - "在你捕捉灵魂之前，你得先看到它们。灵魂棱镜可以让你获得看见灵魂的能力。 you can make your own Spirit Rune and imbue a Helmet with it."
     2:
-      - " <u>Finding Spirits II<reset>"
+      - " <u>搜寻灵魂 第二部分<reset>"
       - ""
-      - "#2. <u>Identifying Glass<reset>,"
-      - "you will need to craft a Identifying Glass to Identify naturally Roaming Spirits. Otherwise when you catch them you will just get an Un-Identified Spirit."
+      - "#2. <u>鉴定玻璃<reset>"
+      - "你需要制作鉴定玻璃来鉴定野生漫游的灵魂you will need to craft a Identifying Glass to Identify naturally Roaming Spirits. Otherwise when you catch them you will just get an Un-Identified Spirit."
     3:
       - " <u>Finding Spirits III<reset>"
       - ""
