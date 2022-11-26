@@ -1,5 +1,6 @@
 package me.justahuman.spiritsunchained.managers;
 
+import com.destroystokyo.paper.event.entity.EntityRemoveFromWorldEvent;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 
 import me.justahuman.spiritsunchained.SpiritsUnchained;
@@ -81,7 +82,7 @@ public class SpiritEntityManager implements Listener {
                 if (helmetItem == null || !SpiritUtils.imbuedCheck(helmetItem)) {
                     continue;
                 }
-                if (SpiritUtils.canSpawn() && spiritCount < SpiritUtils.getPlayerCap() && SpiritUtils.chance(10)) {
+                if (SpiritUtils.canSpawn() && spiritCount < SpiritUtils.getPlayerCap() && SpiritUtils.chance(20)) {
                     final Block b = SpiritUtils.getSpawnBlock(player.getLocation());
                     final String maybeSpirit = SpiritUtils.getSpawnMob(b.getLocation());
                     if (maybeSpirit != null && this.entityMap.get("UNIDENTIFIED_SPIRIT") != null) {
@@ -137,6 +138,14 @@ public class SpiritEntityManager implements Listener {
         final AbstractCustomMob<?> customMob = getCustomClass(e.getEntity(), null);
         if (customMob != null) {
             customMob.onDamage(e);
+        }
+    }
+
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
+    private void onEntityRemove(@Nonnull EntityRemoveFromWorldEvent e) {
+        final AbstractCustomMob<?> customMob = getCustomClass(e.getEntity(), null);
+        if (customMob != null) {
+            this.entityCollection.remove((LivingEntity) e.getEntity());
         }
     }
 }
