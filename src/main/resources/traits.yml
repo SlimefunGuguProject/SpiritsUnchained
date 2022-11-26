@@ -1,150 +1,150 @@
 Better_Shears:
   name: "&f更好的剪刀"
-  type: "被动"
+  type: "Passive"
   lore:
     - "75% 剪羊毛时获得双倍羊毛的机会!"
 Clear_Effects:
   name: "&增强牛奶"
   cooldown: 10
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "使用时将清除所有药剂效果!"
 Eggpult:
   name: "&6鸡蛋布丁"
   cooldown: 30
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "发射一枚爆炸性鸡蛋!"
 Pig_Rancher:
   name: "&d养猪人"
-  type: "被动"
+  type: "Passive"
   lore:
     - "成为一个养猪人"
     - "骑着猪你会获得巨大的速度"
 Winged_Creature:
   name: "&a有翼生物"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得被动缓降!"
 Aquatic_Creature:
   name: "&3水生生物"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "用管道动力适应水!"
 Ink_Spray:
   name: "&0墨水喷射"
   cooldown: 30
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "蒙蔽你周围的敌人!"
 Speedy_Escape:
   name: "&e快速逃离"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得猫的速度和逃避任何敌人!"
     - "健康状况低于10%以下时触发"
 Hops:
   name: "&e啤酒花"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "获得跳跃助力，像兔子一样跳跃!"
 Bee_Buddy:
   name: "&e蜜蜂的朋友"
   cooldown: 10
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "获取蜂蜜和蜂巢!"
 Webber:
   name: "&f韦伯"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "阻止3格范围内网中的实体!"
 Explode:
   name: "&c激增"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "释放致命的爆炸!"
 Strong_Bones:
   name: "&f强壮的骨骼"
-  type: "被动"
+  type: "Passive"
   lore:
     - "强化你脆弱的骨骼，获得抵抗力!"
     - "血量低于50%触发"
 Undead_Protection:
   name: "&2亡灵保护"
-  type: "被动"
+  type: "Passive"
   lore:
     - "任何伤害的药水效果将会治疗你!"
     - "(除了去不掉的药水)"
 What_Fall:
   name: "&a什么秋千"
-  type: "被动"
+  type: "Passive"
   lore:
     - "减半你的坠落伤害"
 Group_Protection:
   name: "&c群体保护"
-  type: "被动"
+  type: "Passive"
   lore:
     - "僵尸猪灵不会在攻击你的时候聚集在一起!"
 Infest:
   name: "&8骚扰"
   cooldown: 10
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "在你使用它的石头上滋生细菌!"
 Sly_Fox:
   name: "&4狡猾的狐狸"
-  type: "被动"
+  type: "Passive"
   lore:
     - "不再受到甜浆果、仙人掌等的伤害!"
 Echolocation:
   name: "&9回声测距"
   cooldown: 20
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "突出显示附近的所有怪物!"
 Frosty:
   name: "&b严寒"
-  type: "被动"
+  type: "Passive"
   lore:
     - "不再冻结在粉状雪中!"
 Stew_Maker:
   name: "&c炖肉制造商"
   cooldown: 15
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "用炖肉填满一些的碗"
 Lava_Walker:
   name: "&4熔岩行者"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "暂时获得在熔岩上行走的能力!"
 Scute_Shedding:
   name: "&2鳞甲脱落"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得脱落的海龟鳞甲!"
     - "受到伤害时有机会掉落鳞甲"
 Villager_Friend:
   name: "&a村民朋友"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "与村民进行更好的交易!"
     - "(给予村庄英雄效果5)"
 Poisonous_Thorns:
   name: "&2毒荆棘"
-  type: "被动"
+  type: "Passive"
   lore:
     - "荆棘伤害有25%的几率造成中毒!"
 Play_Dead:
   name: "&d装死"
-  type: "被动"
+  type: "Passive"
   lore:
     - "装死"
     - "让你隐形并获得重生!"
@@ -152,186 +152,186 @@ Play_Dead:
 Glow_Up:
   name: "&b焕发光彩"
   cooldown: 30
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "制作任意项目框架并让附近的标志发光!"
 Light_It_Up:
   name: "&e点燃它"
   cooldown: 30
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "将岩浆块转化为蛙光!"
 High_Jump:
   name: "&6高跳"
   cooldown: 15
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "把自己高高地抛向空中!"
 Morning_Gift:
   name: "&e早晨礼物!"
-  type: "被动"
+  type: "Passive"
   lore:
     - "睡觉后从你的猫那里获得一份礼物!"
 Better_Food:
   name: "&f更好的食物!"
-  type: "被动"
+  type: "Passive"
   lore:
     - "吃食物时获得30%几率获得双倍饥饿感!"
 Spitter:
   name: "&f呕吐鬼"
   cooldown: 15
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "向你的敌人吐口水!"
 Dolphin_Swimmer:
   name: "&3被海豚加持的游泳者"
-  type: "被动"
+  type: "Passive"
   lore:
     - "在水下获得海豚的恩惠!"
 Natural_Fisher:
   name: "&f大自然的渔民"
-  type: "被动"
+  type: "Passive"
   lore:
     - "在水下游泳时有机会捉到鱼!"
 Crunchy_Bamboo:
   name: "&2松脆的竹子"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得吃竹子的能力!"
 Goats_Instrument:
   name: "&8山羊器具"
   cooldown: 5
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "随机的播放一个山羊角声音!"
 Poison_Spray:
   name: "&2毒药喷雾"
   cooldown: 30
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "向所有附近的敌人喷洒浓浓的毒液!"
 Strange_Secrets:
   name: "&d奇怪的秘密"
-  type: "被动"
+  type: "Passive"
   lore:
     - "将黄金转化为奇怪的冥胶!"
 Multishoot:
   name: "&8多重射击"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得多重射击的机会...."
     - "为你的弓!"
 Crit_hit:
   name: "&6暴击"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "在一小段时间内获得力量3!"
 Mini_Teleport:
   name: "&5迷你传送点"
   cooldown: 20
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "像吃水果一样随机传送!"
 Nautral_Thorns:
   name: "&6自然荆棘"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得自然的荆棘效果!"
 Hunger_Hit:
   name: "&2饥饿来袭"
-  type: "被动"
+  type: "Passive"
   lore:
     - "攻击敌人时有30%的几率造成饥饿!"
 Slow_Shot:
   name: "&3慢镜头"
-  type: "被动"
+  type: "Passive"
   lore:
     - "射击敌人时有30%的几率造成迟缓!"
 Sleep_No_More:
   name: "&9不再睡觉"
   cooldown: 600
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "重置幻翼的计时器!"
 Blazing_Thorns:
   name: "&c燃烧的荆棘"
-  type: "被动"
+  type: "Passive"
   lore:
     - "有25%的几率点燃攻击你的人!"
 Magma_Trap:
   name: "&4岩浆陷阱"
   cooldown: 120
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "将你的敌人浸泡在熔岩中!"
 Better_Brewer:
   name: "&5更好的酿造师"
   cooldown: 120
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "将水瓶酿造成完美的药水!"
 Heavy_Hit:
   name: "&e重击"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "你的下一次攻击会把你的敌人发射到空中!"
 Iron_Defense:
   name: "&f钢铁防御"
-  type: "被动"
+  type: "Passive"
   lore:
     - "获得永恒的效果"
 Targeted_Teleport:
   name: "&d目标传送"
   cooldown: 20
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "向你看的方向传送!"
 Another_Chance:
   name: "&e又一次机会"
-  type: "被动"
+  type: "Passive"
   lore:
     - "死后的又一次机会!"
     - "当你死的时候触发"
 Tank:
   name: "&8坦克"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "暂时获得力量和抗性3"
 Bullet_Swarm:
   name: "&d子弹群"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "射出一大群子弹"
     - "会让你成为你敌人的目标"
 Wither_Resistance:
   name: "&0抗枯萎性"
-  type: "被动"
+  type: "Passive"
   lore:
     - "不再受到枯萎效果的伤害"
 No_Fatigue:
   name: "&8不疲劳"
-  type: "被动"
+  type: "Passive"
   lore:
     - "不再被采矿疲劳效应拖慢"
 Skull_Fire:
   name: "&4骷髅之火"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "发射一个增强的枯萎骷髅"
 Dragons_Breath:
   name: "&d龙息"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "用龙息灌满瓶子"
 Dark_Aura:
   name: "&b黑暗光环"
   cooldown: 60
-  type: "使用物品"
+  type: "Use Item"
   lore:
     - "给所有附近的玩家失明和缓慢"
