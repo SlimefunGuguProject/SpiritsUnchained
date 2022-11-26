@@ -1,51 +1,51 @@
 names:
   spirit_group:
     missing_knowledge:
-      name: "&cMissing Knowledge Piece!"
+      name: "&c知识不足!"
       lore:
-        - "&7Get &bKnowledge &7by:"
-        - "&7   - Catch the Spirit (Piece 1)"
-        - "&7   - Using a Spirit Book (Piece 2)"
-        - "&7   - Getting the Spirit to the Friendly State! (Piece 3)"
+        - "&7可通过以下途径获取&b知识&7:"
+        - "&7   - 捕捉灵魂 (知识碎片 1)"
+        - "&7   - 使用灵魂之书 (知识碎片 2)"
+        - "&7   - 将灵魂驯化为友好状态! (知识碎片 3)"
     afraid_item:
-      name: "&fAfraid Of"
+      name: "&f惧怕"
       lore:
-        - "&7This Spirit is afraid of the Spirits Shown Below"
+        - "&7该灵魂会对以下灵魂感到惧怕:"
     scare_item:
-      name: "&5Scares"
+      name: "&5惊吓"
       lore:
-        - "&7This Spirit Scares the Spirits Shown Below"
+        - "&7该灵魂会惊吓到以下灵魂:"
     relation_book:
-      name: "&aRelations"
+      name: "&a关系"
       lore:
         - ""
-        - "&7Click to Open"
+        - "&7点击打开"
     goal:
       name: "&bPass on Task:"
       kill:
-        label: "&bType: &7Kill Mob"
-        value: "&bTask: &7Kill {amount_and_mob}"
+        label: "&b类型: &7击杀生物"
+        value: "&b任务: &7击杀 {amount_and_mob}"
       item:
-        label: "&bType: &7Give Item"
-        value: "&bTask: &7Give {amount_and_item}"
+        label: "&b类型: &7提供原版物品"
+        value: "&b任务: &7给予 {amount_and_item}"
       slimefun_item:
-        label: "&bType: &7Give Slimefun Item"
-        value: "&bTask: &7Give {amount_and_item}"
+        label: "&b类型: &7提供粘液科技物品"
+        value: "&b任务: &7给予 {amount_and_item}"
       breed:
-        label: "&bType: &7Breed Mobs"
-        value: "&bTask: &7Breed {amount_and_mob}"
+        label: "&b类型: &7喂养生物"
+        value: "&b任务: &7喂养 {amount_and_mob}"
     trait_item:
-      name: "&aTrait"
+      name: "&a特性"
       lore:
         - ""
-        - "&bTrait: {trait_name}"
-        - "&7(Click For Description)"
+        - "&b特性: {trait_name}"
+        - "&7(点击查看说明)"
       open: "&7(Click To Close Description)"
     spirit_item:
-      name: "{tier_color}{mob_type} Spirit"
+      name: "{tier_color}{mob_type}灵魂"
       lore:
-        - "&fThe Captured Spirit of a {mob_type}"
-        - "&fTier: {tier_color}{tier}"
+        - "&f捕捉到的{mob_type}灵魂"
+        - "&f等级: {tier_color}{tier}"
   groups:
     main_group: "&a灵魂巧匠"
     crafting_materials: "&a合成材料"
@@ -64,31 +64,31 @@ names:
     altar_3: "灵魂祭坛 III"
   recipe_type:
     spirit_interact:
-      name: "&fUse On Spirit"
+      name: "&f用于灵魂"
       lore:
         - ""
-        - "&7Use the Item on the Right on any Spirit"
+        - "&7手持该物品右键点击灵魂以使用"
   items:
     infused_membrane:
-      name: "&5Infused Membrane"
+      name: "&5注入幻翼膜"
       lore:
         - ""
-        - "&7A Membrane infused with Magic"
+        - "&7注入了魔法的幻翼膜"
     infused_feather:
-      name: "&5Infused Feather"
+      name: "&5注入羽毛"
       lore:
         - ""
-        - "&7A Feather infused with Magic"
+        - "&7注入了魔法的羽毛"
     soul_stained_glass:
-      name: "&5Soul Stained Glass"
+      name: "&5灵魂染色玻璃"
       lore:
         - ""
-        - "&7Peer into Another Plane"
+        - "&7窥视另一个纬度"
     ectoplasm:
-      name: "&aEctoplasm"
+      name: "&a外质"
       lore:
         - ""
-        - "&7Attained from those Impassable"
+        - "&7从未知中获取"
     unidentified_spirit:
       name: "&f不明灵魂"
       lore:
@@ -131,65 +131,65 @@ names:
       name: "&7古代符文 &8&l[&d&l灵魂&8&l]"
       lore:
         - ""
-        - "&eDrop this rune onto a dropped &dHelmet &eto"
-        - "&egrant the ability to &dsee &ea different realm"
-        - "&eShift Left Click on Helmet Once Added to Toggle Visibility"
-      tag: "&dImbued"
+        - "&e将该符文丢向在地上的&d头盔"
+        - "&e可以让其获得&d看见&e不同领域的能力"
+        - "&eShift+左键点击以切换"
+      tag: "&d已注入"
     electric_spirit_catcher:
-      name: "&aElectric Spirit Catcher"
+      name: "&a电动捕魂机"
       lore:
         - ""
-        - "&7Automatically catch Spirits"
+        - "&7可以自动捕捉灵魂"
         - ""
     electric_spirit_writer:
-      name: "&aElectric Spirit Writer"
+      name: "&a电动灵魂书写机"
       lore:
         - ""
-        - "&7Automatically let Spirits Write to A Spirit Book"
+        - "&7可以自动将灵魂写入灵魂之书中"
         - ""
     altars:
       lore:
         - ""
-        - "&7Used to Build a Spiritual Altar"
+        - "&7用于建造灵魂祭坛"
     charged_quartz_1:
-      name: "&eCharged Quartz I"
+      name: "&e已充能的石英 I"
     charged_stairs_1:
-      name: "&eCharged Stairs I"
+      name: "&e已充能的楼梯 I"
     charged_core_1:
-      name: "&eCharged Core I"
+      name: "&e已充能的核心 I"
     charged_quartz_2:
-      name: "&eCharged Quartz II"
+      name: "&e已充能的石英 II"
     charged_pillar_2:
-      name: "&eCharged Pillar II"
+      name: "&e已充能的柱子 II"
     charged_stairs_2:
-      name: "&eCharged Stairs II"
+      name: "&e已充能的楼梯 II"
     charged_core_2:
-      name: "&eCharged Core II"
+      name: "&e已充能的核心 II"
     charged_quartz_3:
-      name: "&eCharged Quartz III"
+      name: "&e已充能的石英 III"
     charged_pillar_3:
-      name: "&eCharged Pillar III"
+      name: "&e已充能的柱子 III"
     charged_stairs_3:
-      name: "&eCharged Stairs III"
+      name: "&e已充能的楼梯 III"
     charged_core_3:
-      name: "&eCharged Core III"
+      name: "&e已充能的核心 III"
     smooth_charged_quartz_3:
-      name: "&eSmooth Charged Quartz III"
+      name: "&e已充能的平滑石英 III"
     smooth_charged_stairs_3:
-      name: "&eSmooth Charged Stairs III"
+      name: "&e已充能的平滑楼梯 III"
     spirit_item:
-      name: "{tier_color}{mob_type} Spirit"
-      tier_lore: "&fTier: {tier_color}{tier}"
-      current_state_lore: "&fCurrent State: {state_color}{state}"
-      trait_lore: "&fUse: {trait_name}&f: {trait_type}"
-      progress_lore: "&fProgress: {progress_bar}"
+      name: "{tier_color}{mob_type}灵魂"
+      tier_lore: "&f等级: {tier_color}{tier}"
+      current_state_lore: "&f当前状态: {state_color}{state}"
+      trait_lore: "&f使用: {trait_name}&f: {trait_type}"
+      progress_lore: "&f进度: {progress_bar}"
       pass_on_lore: "&fPass On: &c{pass_on_progress}/{pass_on_requirement} {locked}"
-      is_locked: "&4(LOCKED)"
+      is_locked: "&4(已锁定)"
 messages:
   general:
-    learn_knowledge: "You have gained new knowledge about your {mob_type} Spirit!"
-    no_permission: "&cYou do not have the required permissions in this area!"
-    no_permission_entity_interact: "&cYou do not have Entity Interaction Permissions in this area!"
+    learn_knowledge: "&a你获得了关于{mob_type}灵魂的新知识!"
+    no_permission: "&c你没有权限!"
+    no_permission_entity_interact: "&c你没有实体交互的权限!"
   commands:
     altar:
       use: "&6Visualizing &eTier {altar_tier} Altar&6!"
