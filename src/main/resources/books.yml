@@ -153,63 +153,63 @@ COW:
 CHICKEN:
   pages:
     0:
-      - "一种会缓降、喜爱种子的灵魂。它想去哪就去哪。"
+      - "一种会缓降、喜爱种子的生物。它想去哪就去哪。"
 PIG:
   pages:
     0:
-      - "A mob best known for it's love of carrots, to the point of being led by them."
+      - "一种以其对胡萝卜的喜爱而闻名的生物，已经到了被它们牵着鼻子走的地步。"
 PARROT:
   pages:
     0:
-      - "A rare colorful sight, known for its love of Music."
+      - "它看上去五彩斑斓，以其对音乐的喜爱而被人熟知。"
 COD:
   pages:
     0:
-      - "A small fish known to swim in schools."
+      - "一种成群结队的小鱼。"
 SALMON:
   pages:
     0:
-      - "A big fish easily distinguishable for its dark red scales."
+      - "一条大鱼，由于其身上暗红色的鱼鳞很容易进行辨别。"
 TROPICAL_FISH:
   pages:
     0:
-      - "A bright and rare sight in the deep seas, a fisherman's treasure."
+      - "一种在深海中明亮而稀有的生物，是渔夫的宝藏。"
 SQUID:
   pages:
     0:
-      - "A creature known for its ink, essential for writing."
+      - "一种因为墨囊而被熟知的生物，是写作的基础。"
 OCELOT:
   pages:
     0:
-      - "A wild creature known for its equal rarity and speed."
+      - "一种野生动物，以其几乎相同的稀有度与速度而闻名。"
 RABBIT:
   pages:
     0:
-      - "A fast and jumpy creature, hunted for it's lucky feet."
+      - "一种迅捷且活蹦乱跳的生物，人们为了幸运兔脚而捕捉它。"
 BEE:
   pages:
     0:
-      - "A flying creature sought after for its unique ability to utilize flowers for honey."
+      - "一种飞行生物，因其独特的传授花粉与生产蜂蜜技术而受到追捧。"
 SPIDER:
   pages:
     0:
-      - "An eight legged and eight eyed creature, with a unique ability to climb walls."
+      - "拥有八条腿与八只眼睛的生物，拥有独特的爬墙能力。"
 CREEPER:
   pages:
     0:
-      - "A deadly mob, equally valuable and dangerous for its explosive ability."
+      - "一种致命的生物，它的爆炸能力非常有价值，但也充满了危险。"
 SKELETON:
   pages:
     0:
-      - "An undead creature, known for its skilled use of the Bow."
+      - "一种亡灵生物，因其使用弓的能力而被熟知。"
 ZOMBIE:
   pages:
     0:
-      - "An undead creature, simplistic in nature but powerful en masse."
+      - "一种亡灵生物，头脑简单但四肢发达。"
 SLIME:
   pages:
     0:
-      - "A unique mob, sought out for its precious slime balls with the innate ability to split it self upon death."
+      - "一种独特的生物，它的粘液球非常的珍贵，它还能在死亡时分裂。"
 ZOMBIFIED_PIGLIN:
   pages:
     0:
