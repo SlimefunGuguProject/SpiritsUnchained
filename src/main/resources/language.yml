@@ -21,7 +21,7 @@ names:
         - ""
         - "&7点击打开"
     goal:
-      name: "&bPass on Task:"
+      name: "&b放逐任务:"
       kill:
         label: "&b类型: &7击杀生物"
         value: "&b任务: &7击杀 {amount_and_mob}"
@@ -40,7 +40,7 @@ names:
         - ""
         - "&b特性: {trait_name}"
         - "&7(点击查看说明)"
-      open: "&7(Click To Close Description)"
+      open: "&7(点击关闭说明)"
     spirit_item:
       name: "{tier_color}{mob_type}灵魂"
       lore:
@@ -64,18 +64,18 @@ names:
     altar_3: "灵魂祭坛 III"
   recipe_type:
     spirit_interact:
-      name: "&f用于灵魂"
+      name: "&f对灵魂使用"
       lore:
         - ""
         - "&7手持该物品右键点击灵魂以使用"
   items:
     infused_membrane:
-      name: "&5注入幻翼膜"
+      name: "&5注魔幻翼膜"
       lore:
         - ""
         - "&7注入了魔法的幻翼膜"
     infused_feather:
-      name: "&5注入羽毛"
+      name: "&5注魔羽毛"
       lore:
         - ""
         - "&7注入了魔法的羽毛"
@@ -116,7 +116,7 @@ names:
       name: "&d灵魂棱镜"
       lore:
         - ""
-        - "&7在装备后可以看见&d灵魂"
+        - "&7装备后可以看见&d灵魂"
     spirit_net:
       name: "&a灵魂网"
       lore:
@@ -136,16 +136,16 @@ names:
         - "&eShift+左键点击以切换"
       tag: "&d已注入"
     electric_spirit_catcher:
-      name: "&a电动捕魂机"
+      name: "&a电动灵魂捕捉器"
       lore:
         - ""
         - "&7可以自动捕捉灵魂"
         - ""
     electric_spirit_bottler:
-      name: "&aElectric Spirit Bottler"
+      name: "&a电动灵魂装瓶机"
       lore:
         - ""
-        - "&7Automatically bottle Spirits"
+        - "&7可以自动将灵魂装入瓶中"
         - ""
     electric_spirit_writer:
       name: "&a电动灵魂书写机"
@@ -189,7 +189,7 @@ names:
       current_state_lore: "&f当前状态: {state_color}{state}"
       trait_lore: "&f使用: {trait_name}&f: {trait_type}"
       progress_lore: "&f进度: {progress_bar}"
-      pass_on_lore: "&fPass On: &c{pass_on_progress}/{pass_on_requirement} {locked}"
+      pass_on_lore: "&f放逐进度: &c{pass_on_progress}/{pass_on_requirement} {locked}"
       is_locked: "&4(已锁定)"
 messages:
   general:
@@ -198,59 +198,59 @@ messages:
     no_permission_entity_interact: "&c你没有实体交互的权限!"
   commands:
     altar:
-      use: "&6Visualizing &eTier {altar_tier} Altar&6!"
-      materials: "&6Required Materials: "
+      use: "&6正在展示&e{altar_tier}级祭坛&6的蓝图!"
+      materials: "&6所需材料: "
       error:
-        altar_tier: "&cNot a Valid Altar Tier!"
-        altar_multiple: "&cYou can only Visualize 1 Altar at a Time!"
+        altar_tier: "&c祭坛等级无效!"
+        altar_multiple: "&c你只能同时查看一个祭坛的蓝图!"
     particles:
-      error: "&cNot a Proper Particle Test"
+      error: "&c无效的粒子测试"
     give_spirit:
-      error: "&cNot a Valid Spirit Type!"
+      error: "&c无效的灵魂类型!"
     summon_spirit:
-      error: "&cNot a Valid Spirit Type!"
+      error: "&c无效的灵魂类型!"
     edit_item:
       error:
-        not_holding: "&cYou are not holding a Spirit Item!"
-        wrong_state: "&cNot a valid Spirit State!"
-        wrong_progress: "&cNot a proper Progress Value!"
+        not_holding: "&c你没有手持灵魂物品!"
+        wrong_state: "&c无效的灵魂状态!"
+        wrong_progress: "&c无效的进度值!"
     reset_cooldown:
-      error: "&cThat Player is not Online!"
+      error: "&c玩家不在线!"
   spirits:
-    escape: "&cThe Spirit Escaped the Net!"
-    max_knowledge: "&cYou can't gain anymore knowledge from a Book!"
-    rip_book: "&cThe Spirit rips the Book to Shreds!"
-    pass_on: "{tier_color}{spirit_name} Spirit has Passed on!"
-    locked: "&cLocked &fHeld Spirit!"
-    unlocked: "&aUnlocked &fHeld Spirit!"
-    try_craft: "&cYou can't craft with a Spirit!"
+    escape: "&c灵魂从网中逃出去了!"
+    max_knowledge: "&c你无法从这本书中获取更多知识!"
+    rip_book: "&c灵魂把书撕成了碎片!"
+    pass_on: "{tier_color}{spirit_name}灵魂已被放逐!"
+    locked: "&c已锁定&f手持的灵魂!"
+    unlocked: "&a已解锁&f手持的灵魂!"
+    try_craft: "&c你不能使用灵魂来合成物品!"
   altar:
-    broken: "&bPart of the altar has been broken, please repair it and reactivate it!"
-    complete_prompt: "&bFinish your Altar and click this block again to activate it!"
-    not_completed: "&bThe Altar is not finished!"
+    broken: "&b祭坛已损坏，请修复并重新激活!"
+    complete_prompt: "&b完成祭坛的建造，并点击该方块来激活!"
+    not_completed: "&b祭坛还没有建造完成!"
     completed:
-      1: "&bThe Spiritual Altar (Tier 1) has been activated!"
-      2: "7bThe Spiritual Altar (Tier 2) has been activated!"
-      3: "&bThe Spiritual Altar (Tier 3) has been activated!"
+      1: "&b灵魂祭坛 (等级 1) 已激活!"
+      2: "7b灵魂祭坛 (Tier 2) 已激活!"
+      3: "&b灵魂祭坛 (Tier 3) 已激活!"
   spirit_rune:
-    not_helmet: "&dThe thrown Item is not a Helmet!"
-    imbued: "&dYour Helmet is now Imbued with the Ability to See Spirits!"
-    multiple_helmets: "&dYour Helmet could not be Imbued!"
-    multiple_runes: "&dOny use 1 Rune!"
-    toggled_on: "&dToggled On Visibility"
-    toggled_off: "&dToggled Off Visibility"
+    not_helmet: "&d要注入的物品不是头盔!"
+    imbued: "&d你的头盔已注入魔法，现在可以看见灵魂了!"
+    multiple_helmets: "&d你的头盔不能进行注入!"
+    multiple_runes: "&d每次只能使用一个符文!"
+    toggled_on: "&d已开启灵魂可见"
+    toggled_off: "&d已关闭灵魂可见"
   identifying_glass:
-    use: "&fSpirit Type: {tier_color}{spirit_name}   &fCurrent State: {state_color}{state_name}   &fTier: {tier_color}{tier}"
+    use: "&f灵魂类型: {tier_color}{spirit_name}   &f当前状态: {state_color}{state_name}   &f等级: {tier_color}{tier}"
   traits:
-    incorrect_state: "{tier_color_and_mob_type} Spirit Must be Gentle or Higher!"
-    passive: "{trait_name} is a Passive Trait!"
-    on_cooldown: "{trait_name} on Cooldown! ({cooldown}s)"
-    used: "{trait_name} Used!"
-    used_passive: "{tier_color_and_mob_type} Passive Activated!"
-    not_enough_progress: "{tier_color_and_mob_type} Spirit Does not have high enough Progress! ({progress}/{required_progress})"
-    error: "{mob_type}'s Trait encountered an Error! Please open a bug report on github!"
+    incorrect_state: "{tier_color_and_mob_type}灵魂状态必须为温和或友好!"
+    passive: "{trait_name}是一个被动特性!"
+    on_cooldown: "{trait_name}正在冷却中! ({cooldown}秒)"
+    used: "已使用{trait_name}!"
+    used_passive: "{tier_color_and_mob_type}被动已激活!"
+    not_enough_progress: "{tier_color_and_mob_type}灵魂的驯化进度不足! ({progress}/{required_progress})"
+    error: "{mob_type}的特性遇到了一些问题，请在问题追踪器中汇报!"
     cooldown:
-      strong_bones: "&fCooldown Started for Strong Bones! &7(1 1/2 Minutes)"
-      play_dead: "&fCooldown Started for &dPlay Dead! &7(1 Minute)"
-      speedy_escape: "&fCooldown Started for &eSpeedy Escape! &7(1 Minute)"
-      morning_gift: "&fCooldown Started for &eMorning Gift! &7(20 Minutes)"
+      strong_bones: "&fCooldown Started for Strong Bones! &7(1 1/2 分钟)"
+      play_dead: "&fCooldown Started for &dPlay Dead! &7(1 分钟)"
+      speedy_escape: "&fCooldown Started for &eSpeedy Escape! &7(1 分钟)"
+      morning_gift: "&fCooldown Started for &eMorning Gift! &7(20 分钟)"

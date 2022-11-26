@@ -1,39 +1,39 @@
 options:
-  #Should spirits update itself on Start Up?
+  # 是否启用自动更新
   auto-update: true
 
-  #tick-rate controls how often the Spirit Entities will Tick
-  #Lower numbers will make them tick faster giving smoother appearance but worse on Performance
-  #there are 20 minecraft ticks a Second so a setting of 2 would make it tick 10 times a second
+  # tick-rate 决定了灵魂实体的游戏循环(刻)周期
+  # 更低的数值能让灵魂看上去更自然，但也会增加服务器性能开销
+  # 1秒钟有20个MC刻，默认值2即让游戏循环每秒进行10次
   tick-rate: 2
 
-  # The max amount of Spirits on the Server at a Time
-  # This is not Per Player its for the **Total** Server
-  # You may want this number Higher or Lower depending on both Player Counts and Server Performance
+  # 同一时间服务器中最多可以存在多少灵魂
+  # 需要注意该设置是针对服务器的，而不是针对玩家的
+  # 你可以根据服务器玩家数量以及性能来调整该值
   max-spirits: 40
 
-  # The max amount of Spirits in a radius around a Player
-  # This will limit how many Spirits 1 player can have at a time
-  # Useful for assuring that multiple Players will always be able to have Spirits
+  # 玩家周围最多可存在灵魂的数量
+  # 该选项将限制每个玩家同时可拥有的灵魂数量
+  # 可以用来确保每个玩家都能获取灵魂
   player-spirit-cap: 4
 
-  # How often Spirits Unchained will try to spawn a Spirit (in seconds)
-  # This will only spawn Spirits around Players that are actively
-  # Using a Spirit Rune (Toggled On) or who are Using Spirit Lenses
+  # 自然生成灵魂的间隔 (单位：秒)
+  # 自然生成仅会在玩家装备注入灵魂魔法的头盔
+  # 或使用灵魂棱镜时进行
   spawn-rate: 10
 
-  #Should Hostile Spirits Be Able to Move around Items in a Players Inventory
+  # 当玩家物品栏中拥有敌对状态的灵魂时，是否随机移动玩家物品栏中的物品
   hostile-movement: true
 
-  #Should Hostile and Aggressive Spirits Damage Players when in a Players Inventory
+  # 当玩家物品栏中拥有敌对或挑衅状态的灵魂时，是否伤害玩家
   aggressive-damage: true
 
-  #What Worlds should Spirits NOT Spawn In, Case Sensitive
+  # 灵魂不应该在哪些世界生成（注意大小写）
   disabled-worlds:
     - example-name
 
-  #Should the Guide Researches be enabled?
+  # 是否启用研究
   enable-researches: false
 
-  # Should Mobs Spawned from Mob Spawners be able to release Spirits
+  # 刷怪笼生成的生物是否能释放出灵魂
   spawner-spirits: true
