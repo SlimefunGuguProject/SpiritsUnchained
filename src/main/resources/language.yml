@@ -141,6 +141,12 @@ names:
         - ""
         - "&7可以自动捕捉灵魂"
         - ""
+    electric_spirit_bottler:
+      name: "&aElectric Spirit Bottler"
+      lore:
+        - ""
+        - "&7Automatically bottle Spirits"
+        - ""
     electric_spirit_writer:
       name: "&a电动灵魂书写机"
       lore:
