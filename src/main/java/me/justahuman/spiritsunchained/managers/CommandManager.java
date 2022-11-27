@@ -346,7 +346,7 @@ public class CommandManager implements TabExecutor {
                     final ItemStack[] input = machineRecipe.getInput();
                     final ItemStack[] output = machineRecipe.getOutput();
                     final int energyUsed = machineRecipe.getTicks() * aContainer.getEnergyConsumption() * -1;
-                    final JSONObject recipe = fillRecipe(input, output, energyUsed);
+                    final JSONObject recipe = fillRecipe(input, output, energyUsed, machineRecipe.getTicks() * 2);
                     recipeCategory.add(recipe);
                 }
             } else if (slimefunItem instanceof MultiBlockMachine multiBlockMachine) {
@@ -356,7 +356,7 @@ public class CommandManager implements TabExecutor {
                         continue;
                     }
                     final ItemStack[] output = recipes.get(recipes.indexOf(input) + 1);
-                    final JSONObject recipe = fillRecipe(input, output, null);
+                    final JSONObject recipe = fillRecipe(input, output, null, null);
                     recipeCategory.add(recipe);
                 }
             } else if (slimefunItem instanceof GoldPan goldPan) {
@@ -366,7 +366,7 @@ public class CommandManager implements TabExecutor {
                         continue;
                     }
                     final ItemStack output = recipes.get(recipes.indexOf(input) + 1);
-                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, null);
+                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, null, null);
                     recipeCategory.add(recipe);
                 }
             } else if (slimefunItem instanceof AbstractEnergyProvider abstractEnergyProvider) {
@@ -378,7 +378,7 @@ public class CommandManager implements TabExecutor {
                     final ItemStack input = machineFuel.getInput();
                     final ItemStack output = machineFuel.getOutput();
                     final int energy = machineFuel.getTicks() * abstractEnergyProvider.getEnergyProduction();
-                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, energy);
+                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, energy, machineFuel.getTicks() * 2);
                     recipeCategory.add(recipe);
                 }
             } else if (slimefunItem instanceof AncientAltar ancientAltar) {
@@ -401,7 +401,7 @@ public class CommandManager implements TabExecutor {
                     ItemStack[] input = new ItemStack[listInput.size()];
                     input = listInput.toArray(input);
                     final ItemStack output = altarRecipe.getOutput();
-                    final JSONObject recipe = fillRecipe(input, new ItemStack[]{output}, null);
+                    final JSONObject recipe = fillRecipe(input, new ItemStack[]{output}, null, 16);
                     recipeCategory.add(recipe);
                 }
             }
@@ -429,7 +429,7 @@ public class CommandManager implements TabExecutor {
         return toReturn;
     }
 
-    private JSONObject fillRecipe(ItemStack[] input, ItemStack[] output, Integer energy) {
+    private JSONObject fillRecipe(ItemStack[] input, ItemStack[] output, Integer energy, Integer time) {
         final JSONObject recipe = new JSONObject();
         final List<String> inputs = processList(input);
         final List<String> outputs = processList(output);
@@ -437,6 +437,9 @@ public class CommandManager implements TabExecutor {
         recipe.put("outputs", outputs);
         if (energy != null) {
             recipe.put("energy", energy);
+        }
+        if (time != null) {
+            recipe.put("time", time);
         }
         return recipe;
     }
