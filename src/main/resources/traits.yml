@@ -55,13 +55,13 @@ Bee_Buddy:
   cooldown: 10
   type: "Use Item"
   lore:
-    - "获取蜂蜜和蜂巢!"
+    - "随机获得蜂蜜或蜜脾!"
 Webber:
   name: "&f织网"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "阻止3格范围内网中的实体!"
+    - "对附近玩家织网来阻止他们!"
 Explode:
   name: "&c激增"
   cooldown: 60
@@ -81,7 +81,7 @@ Undead_Protection:
     - "任何伤害药水效果都会治疗你!"
     - "(除了滞留型药水)"
 What_Fall:
-  name: "&a什么秋千"
+  name: "&a不完美的自由落体"
   type: "Passive"
   lore:
     - "你的摔落伤害减半"
@@ -278,9 +278,9 @@ Iron_Defense:
   name: "&f钢铁防御"
   type: "Passive"
   lore:
-    - "获得永恒的效果"
+    - "获得抗性提升的效果"
 Targeted_Teleport:
-  name: "&d目标传送"
+  name: "&d定点传送"
   cooldown: 20
   type: "Use Item"
   lore:
@@ -290,13 +290,13 @@ Another_Chance:
   type: "Passive"
   lore:
     - "死后的又一次机会!"
-    - "当你死的时候触发"
+    - "当你受到致命伤害时触发"
 Tank:
   name: "&8坦克"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "暂时获得力量和抗性3"
+    - "暂时获得力量和抗性提升"
 Bullet_Swarm:
   name: "&d子弹群"
   cooldown: 60
@@ -313,7 +313,7 @@ No_Fatigue:
   name: "&8不疲劳"
   type: "Passive"
   lore:
-    - "不再被采矿疲劳效应拖慢"
+    - "不再受到挖掘疲劳效果的影响"
 Skull_Fire:
   name: "&4骷髅之火"
   cooldown: 60
