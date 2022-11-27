@@ -5,6 +5,7 @@ import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 import me.justahuman.spiritsunchained.managers.ConfigManager;
 
+import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -31,7 +32,8 @@ public class PlayerUtils {
         final String newKnowledge = currentKnowledge.replace(currentKnowledge.charAt(knowledgeType), 'Y');
         playerData.set(player.getUniqueId()+"."+type, newKnowledge);
         if (!currentKnowledge.equals(newKnowledge)) {
-            player.sendMessage(SpiritUtils.getTranslation("messages.general.learn_knowledge").replace("{mob_type}", ChatUtils.humanize(type.name())));
+            player.sendMessage(SpiritUtils.getTranslation("messages.general.learn_knowledge")
+                .replace("{mob_type}", EntityTypeHelper.getName(type)));
         }
     }
 

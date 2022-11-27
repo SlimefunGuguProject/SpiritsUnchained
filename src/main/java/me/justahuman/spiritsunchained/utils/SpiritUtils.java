@@ -7,6 +7,7 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.Persis
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
+import io.slimefunguguproject.spiritsunchained.TranslationUtil;
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 import me.justahuman.spiritsunchained.implementation.mobs.AbstractCustomMob;
 import me.justahuman.spiritsunchained.managers.ConfigManager;
@@ -17,6 +18,7 @@ import me.justahuman.spiritsunchained.slimefun.ItemStacks;
 import me.justahuman.spiritsunchained.spirits.SpiritDefinition;
 
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
+import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import net.kyori.adventure.text.Component;
 
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -265,7 +267,7 @@ public class SpiritUtils {
     }
 
     private static boolean tryUseSpirit(Player player, ItemStack spiritItem, SpiritDefinition definition, boolean notif) {
-        final String name = ChatColors.color(tierColor(definition.getTier()) + ChatUtils.humanize(definition.getType().name()));
+        final String name = ChatColors.color(tierColor(definition.getTier()) + EntityTypeHelper.getName(definition.getType()));
         final ItemMeta meta = spiritItem.getItemMeta();
         final String state = PersistentDataAPI.getString(meta, Keys.spiritStateKey);
         final Map<String, Object> traitInfo = getTraitInfo(definition.getTrait());
@@ -310,7 +312,10 @@ public class SpiritUtils {
         progress = BigDecimal.valueOf(progress).setScale(2, RoundingMode.HALF_UP).doubleValue();
         PersistentDataAPI.setDouble(meta, Keys.spiritProgressKey, progress);
         PersistentDataAPI.setString(meta, Keys.spiritStateKey, state);
-        lore.set(2, Component.text(getTranslation("names.items.spirit_item.current_state_lore").replace("{state_color}", stateColor(state).toString()).replace("{state}", state)));
+        lore.set(2, Component.text(getTranslation("names.items.spirit_item.current_state_lore")
+            .replace("{state_color}", stateColor(state).toString())
+            .replace("{state}", TranslationUtil.getSpiritState(state))
+        ));
         lore.set(5, Component.text(getTranslation("names.items.spirit_item.progress_lore").replace("{progress_bar}", getProgress(progress))));
         lore.set(6, Component.text(getTranslation("names.items.spirit_item.pass_on_lore").replace("{pass_on_progress}", String.valueOf(passOn)).replace("{pass_on_requirement}", String.valueOf(toPass)).replace("{locked}", (PersistentDataAPI.hasBoolean(meta, Keys.spiritLocked) && PersistentDataAPI.getBoolean(meta, Keys.spiritLocked) ? getTranslation("names.items.spirit_item.is_locked") : ""))));
         meta.lore(lore);
@@ -414,7 +419,7 @@ public class SpiritUtils {
 
         final ChatColor tierColor = tierColor(definition.getTier());
         final ChatColor stateColor = stateColor(state);
-        final String spiritType  = ChatUtils.humanize(definition.getType().name());
+        final String spiritType = EntityTypeHelper.getName(definition.getType());
         final Map<String, Object> traitInfo = getTraitInfo(definition.getTrait());
 
         ((FireworkEffectMeta) itemMeta).setEffect(SpiritUtils.effectColor(definition.getType()));
@@ -430,8 +435,14 @@ public class SpiritUtils {
 
         itemLore.add(Component.text(""));
         itemLore.add(Component.text(getTranslation("names.items.spirit_item.tier_lore").replace("{tier_color}", tierColor.toString()).replace("{tier}", String.valueOf(definition.getTier()))));
-        itemLore.add(Component.text(getTranslation("names.items.spirit_item.current_state_lore").replace("{state_color}", stateColor.toString()).replace("{state}", state)));
-        itemLore.add(Component.text(ChatColors.color(getTranslation("names.items.spirit_item.trait_lore").replace("{trait_name}", (String) traitInfo.get("name")).replace("{trait_type}", (String) traitInfo.get("type")))));
+        itemLore.add(Component.text(getTranslation("names.items.spirit_item.current_state_lore")
+            .replace("{state_color}", stateColor.toString())
+            .replace("{state}", TranslationUtil.getSpiritState(state))
+        ));
+        itemLore.add(Component.text(ChatColors.color(getTranslation("names.items.spirit_item.trait_lore")
+            .replace("{trait_name}", (String) traitInfo.get("name"))
+            .replace("{trait_type}", TranslationUtil.getTraitType((String) traitInfo.get("type")))
+        )));
         itemLore.add(Component.text(""));
         itemLore.add(Component.text(getTranslation("names.items.spirit_item.progress_lore").replace("{progress_bar}", getProgress(0))));
         itemLore.add(Component.text(getTranslation("names.items.spirit_item.pass_on_lore").replace("{pass_on_progress}", "0").replace("{pass_on_requirement}", String.valueOf(definition.getGoal().getAmount())).replace("{locked}", "")));
@@ -523,8 +534,9 @@ public class SpiritUtils {
         final String type = definition.getType().name();
         final ItemStack book = getFilledBook(type);
         final BookMeta bookMeta = (BookMeta) book.getItemMeta();
-        final String name = ChatUtils.humanize(type) + " Spirit";
-        bookMeta.setAuthor(name);
+        final String entityName = EntityTypeHelper.getName(definition.getType());
+        final String name = entityName + "灵魂";
+        bookMeta.setAuthor(entityName);
         bookMeta.setTitle(name);
         book.setItemMeta(bookMeta);
         return book;
@@ -542,8 +554,8 @@ public class SpiritUtils {
         for (String pageNum : pages.getKeys(false)) {
             bookMeta.addPages(MiniMessage.miniMessage().deserialize(StringUtils.join(pages.getStringList(pageNum), "\n")));
         }
-        bookMeta.setAuthor(bookConfig.getString("author", "Spirit"));
-        bookMeta.setTitle(bookConfig.getString("title", "Written Book"));
+        bookMeta.setAuthor(bookConfig.getString("author", "灵魂"));
+        bookMeta.setTitle(bookConfig.getString("title", "灵魂之书"));
         filledBook.setItemMeta(bookMeta);
         return filledBook;
     }

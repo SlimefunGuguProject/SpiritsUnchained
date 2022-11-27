@@ -7,6 +7,7 @@ import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.Persis
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 
+import io.slimefunguguproject.spiritsunchained.TranslationUtil;
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 import me.justahuman.spiritsunchained.implementation.mobs.AbstractCustomMob;
 import me.justahuman.spiritsunchained.implementation.mobs.Spirit;
@@ -16,6 +17,7 @@ import me.justahuman.spiritsunchained.spirits.SpiritDefinition;
 import me.justahuman.spiritsunchained.utils.Keys;
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
 
+import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;
 
@@ -56,7 +58,12 @@ public class IdentifyingGlassListener implements Listener {
                 final SpiritDefinition definition = spirit.getDefinition();
                 final ChatColor tierColor = SpiritUtils.tierColor(definition.getTier());
                 final ChatColor stateColor = SpiritUtils.stateColor(PersistentDataAPI.getString(currentEntity, Keys.spiritStateKey));
-                final String actionBarMessage = SpiritUtils.getTranslation("messages.identifying_glass.use").replace("{tier_color}", tierColor.toString()).replace("{spirit_name}", ChatUtils.humanize(definition.getType().name())).replace("{state_color}", stateColor.toString()).replace("{state_name}", PersistentDataAPI.getString(currentEntity, Keys.spiritStateKey)).replace("{tier}", String.valueOf(definition.getTier()));
+                final String actionBarMessage = SpiritUtils.getTranslation("messages.identifying_glass.use")
+                    .replace("{tier_color}", tierColor.toString())
+                    .replace("{spirit_name}", EntityTypeHelper.getName(definition.getType()))
+                    .replace("{state_color}", stateColor.toString())
+                    .replace("{state_name}", TranslationUtil.getSpiritState(PersistentDataAPI.getString(currentEntity, Keys.spiritStateKey)))
+                    .replace("{tier}", String.valueOf(definition.getTier()));
                 player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(actionBarMessage));
             }
         }
