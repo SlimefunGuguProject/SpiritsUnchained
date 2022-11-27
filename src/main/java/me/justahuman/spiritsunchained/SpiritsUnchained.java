@@ -1,25 +1,21 @@
 package me.justahuman.spiritsunchained;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
-
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import lombok.Getter;
 import me.justahuman.spiritsunchained.managers.CommandManager;
-import me.justahuman.spiritsunchained.slimefun.Researches;
-import me.justahuman.spiritsunchained.utils.Keys;
-import me.justahuman.spiritsunchained.utils.LogUtils;
 import me.justahuman.spiritsunchained.managers.ConfigManager;
 import me.justahuman.spiritsunchained.managers.ListenerManager;
 import me.justahuman.spiritsunchained.managers.RunnableManager;
 import me.justahuman.spiritsunchained.managers.SpiritEntityManager;
 import me.justahuman.spiritsunchained.managers.SpiritsManager;
 import me.justahuman.spiritsunchained.slimefun.ItemStacks;
-
-import me.justahuman.spiritsunchained.utils.SpiritUtils;
+import me.justahuman.spiritsunchained.slimefun.Researches;
+import me.justahuman.spiritsunchained.utils.Keys;
+import me.justahuman.spiritsunchained.utils.LogUtils;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanBuildsUpdaterWrapper;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -51,6 +47,7 @@ public class SpiritsUnchained extends JavaPlugin implements SlimefunAddon {
 
         getLogger().info("========================================");
         getLogger().info("    SpiritsUnchained - By JustAHuman    ");
+        getLogger().info("        灵魂巧匠 - 粘液科技简中汉化组        ");
         getLogger().info("========================================");
 
         saveDefaultConfig();
@@ -63,9 +60,9 @@ public class SpiritsUnchained extends JavaPlugin implements SlimefunAddon {
 
         Setup.INSTANCE.init();
 
-        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV")) {
-            GitHubBuildsUpdater updater = new GitHubBuildsUpdater(this, this.getFile(), "JustAHuman-xD/SpiritsUnchained/master");
-            updater.start();
+        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
+            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "SlimefunGuguProject", "SpiritsUnchained", "master",
+                false);
         }
 
         if (getConfig().getBoolean("options.enable-researches")) {
@@ -85,7 +82,7 @@ public class SpiritsUnchained extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/JustAHuman-xD/SpiritsUnchained/issues";
+        return "https://github.com/SlimefunGuguProject/SpiritsUnchained/issues";
     }
 
     @Nonnull

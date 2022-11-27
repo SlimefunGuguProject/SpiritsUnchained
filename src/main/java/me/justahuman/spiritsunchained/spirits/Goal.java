@@ -9,8 +9,10 @@ import lombok.Getter;
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
+import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -38,8 +40,8 @@ public class Goal {
     }
 
     private ItemStack createDisplayStack() {
-        final String addition = amount > 1 ? "s" : "";
-        final String loreEnd = amount + " " + ChatUtils.humanize(requiredType);
+        final String addition = ""; // amount > 1 ? "s" : "";
+        final String loreEnd = amount + " " + EntityTypeHelper.getName(requiredType);
         final String name = translate("name");
         final ItemStack kill = new CustomItemStack(
                 Material.DIAMOND_SWORD,

@@ -35,7 +35,7 @@ import java.util.Random;
 public class UnIdentifiedSpirit extends AbstractCustomMob<Allay> {
 
     public UnIdentifiedSpirit() {
-        super(Allay.class, "UNIDENTIFIED_SPIRIT", "&7Unidentified Spirit", 10);
+        super(Allay.class, "UNIDENTIFIED_SPIRIT", "&7未知灵魂", 10);
     }
 
     @Nonnull
