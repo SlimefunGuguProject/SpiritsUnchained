@@ -266,156 +266,156 @@ GLOW_SQUID:
 FROG:
   pages:
     0:
-      - "A rare tropical mob, changing in color based on its home, known for a love of slimes."
+      - "一种稀有的热带生物，会根据环境改变自身的颜色，因其对史莱姆的喜爱而被熟知。"
 HORSE:
   pages:
     0:
-      - "A true steed, ideal for overworld travel, with a high jump."
+      - "最好的战马可以让你在主世界穿梭。"
 DONKEY:
   pages:
     0:
-      - "A cousin of the horse, lacks the ability to wear armor, but can instead hold a chest."
+      - "马的同类，虽然不能穿马铠，但是可以背一个箱子。"
 MULE:
   pages:
     0:
-      - "A cousin of the horse, lacks the ability to wear armor, but can instead hold a chest."
+      - "马的同类，虽然不能穿马铠，但是可以背一个箱子。"
 CAT:
   pages:
     0:
-      - "A cousin of the ocelot, found uniquely in villages, might even give you a gift after a good nights rest."
+      - "豹猫的同类，只能在村庄中找到，也许会在你早晨醒来时给你一件小礼物。"
 WOLF:
   pages:
     0:
-      - "A wild inhabitant of the forests, known for its love of bones it can be tamed."
+      - "丛林的原住民，分布广泛，非常喜欢骨头，可以被驯服。"
 LLAMA:
   pages:
     0:
-      - "A rare encounter, wearer of stylish carpet styles, these mobs spit on attackers."
+      - "一般很难见到它们，通常会穿着时尚的羊毛毯，会向攻击者吐口水。"
 DOLPHIN:
   pages:
     0:
-      - "A excellent swimmer, one who loves to play with items and blocks, it might even grace you with it's ability."
+      - "非常出色的泳者，非常喜欢与方块和物品互动，也许还能祝福你。"
 POLAR_BEAR:
   pages:
     0:
-      - "A cold fish loving animal, its as nice to you as you are to it."
+      - "在严寒地区出现的生物，喜欢鱼。"
 PANDA:
   pages:
     0:
-      - "A unique inhabitant of the jungle forests, known for its love of bamboo and its ability to roll."
+      - "丛林的原住民，非常喜欢竹子和翻滚。"
 GOAT:
   pages:
     0:
-      - "A true mountain climber, with the ability to jump high, and a deadly habit to ram mobs."
+      - "喜欢攀爬高山，跳得很高，也能把其他生物撞飞。"
 CAVE_SPIDER:
   pages:
     0:
-      - "A poisonous cousin of the Spider, with less health it relies on its ability."
+      - "剧毒的蜘蛛，拥有较低的血量，因此非常依赖自己的能力。"
 PIGLIN:
   pages:
     0:
-      - "A bargainer of the nether, fascinated by gold and holder of Strange Secrets."
+      - "可以在下界与其交易，会被金子吸引，可能拥有隐藏的秘密。"
 PILLAGER:
   pages:
     0:
-      - "A cousin of the Villager, crossbow wielding and the most common of the Illagers."
+      - "村民的同类，但拿着弩，是最常见的灾厄村民。"
 VINDICATOR:
   pages:
     0:
-      - "Another part of the Illager family, this axe wielding mob will pack a punch."
+      - "灾厄村民族群的另一个部分，这些拿着斧头的暴徒会给你致命一击。"
 ENDERMAN:
   pages:
     0:
-      - "A rare sight in the overworld, yet overflowing in the end. These unique mobs possess the ability of teleportation and love blocks."
+      - "在主世界中几乎很少见，但是在末地，它们到处都是。这种生物有瞬移的能力，并且非常喜欢方块。"
 GUARDIAN:
   pages:
     0:
-      - "A thorn covered mob, protector of the ocean monuments."
+      - "浑身长满刺的生物，是海底神殿的守卫者。"
 HUSK:
   pages:
     0:
-      - "A cousin of the Zombie, found only in the Deserts, told to have hungering effects."
+      - "僵尸的同类，不过只能在沙漠中找到，似乎会饥饿。"
 STRAY:
   pages:
     0:
-      - "A cousin of the Skeleton, found only in the coldest of biomes, its arrows inflict a slowing effect."
+      - "骷髅的同类，只在严寒地区出现，它射出的箭矢拥有减速效果。"
 PHANTOM:
   pages:
     0:
-      - "A phantom of the night, one that appears only after you have not slept, its secrets are still unknown."
+      - "在夜晚出现的生物，只会在你没有足够的睡眠时出现。它的秘密仍然未知。"
 BLAZE:
   pages:
     0:
-      - "A unique inhabitant of the Nether Fortress's, with its ability to shoot fireballs and fly."
+      - "下界要塞的原住民，可以飞行与射出火球。"
 MAGMA_CUBE:
   pages:
     0:
-      - "A cousin of the Slime, found only in the Nether it has adapted to its new landscape."
+      - "史莱姆的同类，只能在下界找到。它已经适应了下界的环境。"
 ZOMBIE_VILLAGER:
   pages:
     0:
-      - "A zombified villager, the infection only curable with the use of weakness and the rare golden apple."
+      - "僵尸化的村民，可以用虚弱药水和金苹果来治愈。"
 DROWNED:
   pages:
     0:
-      - "A cousin of the Zombie, created by a Zombie who falls to the Deep Abyss."
+      - "僵尸的同类。僵尸在水中呆太久就会变成这样。"
 WITCH:
   pages:
     0:
-      - "A cousin of the villager, the witches have learned the art of potion brewing."
+      - "村民的同类，但是学会了酿造药水的技术。"
 HOGLIN:
   pages:
     0:
-      - "A heavy hitting creature, found in the forests of the nether, with a fear of warped fungi."
+      - "一种重型生物，可以在下界的森林中找到，非常惧怕诡异菌。"
 ZOGLIN:
   pages:
     0:
-      - "A zombified hoglin, only found when a hoglin ventures to the overworld."
+      - "僵尸化的疣猪兽。疣猪兽进入主世界后才会转变。"
 ZOMBIE_HORSE:
   pages:
     0:
-      - "A zombified horse, the secrets of this mob are still unknown."
+      - "僵尸化的马，它的秘密仍未被发现。"
 SKELETON_HORSE:
   pages:
     0:
-      - "A skeletal horse, a rare sight and utilized by the Skeleton Horseman."
+      - "骷髅化的马，非常罕见。通常会随着骷髅骑士出现。"
 IRON_GOLEM:
   pages:
     0:
-      - "A heavy mob, found in villages and built by players, a true protector."
+      - "一种重型生物，可以在村庄里找到，也能被玩家建造，是真正的村庄守卫。"
 ENDERMITE:
   pages:
     0:
-      - "A unique mob, only found in the breaking of an ender pearl, hated by enderman."
+      - "一种独特的生物，只会在破坏末影珍珠时出现。末影人讨厌他们。"
 EVOKER:
   pages:
     0:
-      - "A magical mob, one who has discovered the secrets of life and death."
+      - "一种魔法生物，已经掌握了生与死的秘密。"
 RAVAGER:
   pages:
     0:
-      - "A special mob, only found in the ranks of the Pillagers, known to be a strong adversary."
+      - "一种特殊的生物，只会在村庄劫掠时出现，是一名强大的敌人。"
 SHULKER:
   pages:
     0:
-      - "A rare inhabitant of the End, protector of its cities and the loot to be found inside."
+      - "末地的原住民，守卫着末地城和其中的宝藏。"
 WITHER_SKELETON:
   pages:
     0:
-      - "A cousin of the Skeleton, most often found in Soul Sand Valleys, be wary of its Withering touch."
+      - "骷髅的同类，基本只会在灵魂沙地区出现。小心它的凋零之触！"
 ELDER_GUARDIAN:
   pages:
     0:
-      - "A cousin of the Guardian, possessing the ability to give mining fatigue, to protect the treasures of its temple."
+      - "守卫者的同类，可以施加挖掘疲劳效果，来守卫神殿中的宝藏。"
 WITHER:
   pages:
     0:
-      - "A terrifying creation by man, made by combining withered skulls and sand of souls, known to terrorize the mobs of the overworld."
+      - "由人类创造出的可怕生物，使用凋灵骷髅头与灵魂沙进行召唤，会攻击主世界的大部分生物。"
 ENDER_DRAGON:
   pages:
     0:
-      - "A lone mob, protected by magic in the end, defeated for its precious egg."
+      - "孤独的生物，被末地魔法保护，人们会为了它珍贵的蛋而击败它。"
 WARDEN:
   pages:
     0:
-      - "A terrifying guard of the Ancient Cities, summoned by the Shrieks of lost Souls."
+      - "古代城中恐怖的守卫，由失落灵魂的尖叫召唤而来。"
