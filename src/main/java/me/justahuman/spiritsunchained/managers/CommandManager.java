@@ -1,5 +1,6 @@
 package me.justahuman.spiritsunchained.managers;
 
+import com.google.gson.JsonObject;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlock;
@@ -13,6 +14,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.electric.Abstract
 import io.github.thebusybiscuit.slimefun4.implementation.items.tools.GoldPan;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.libraries.unirest.json.JSONElement;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 import me.justahuman.spiritsunchained.implementation.mobs.AbstractCustomMob;
@@ -26,6 +28,7 @@ import me.justahuman.spiritsunchained.utils.SpiritTraits;
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
 
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AGenerator;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineFuel;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.MachineRecipe;
 import org.bukkit.Bukkit;
@@ -92,6 +95,9 @@ public class CommandManager implements TabExecutor {
         else if (useCommand("GenerateEMI", player, 0, 1, args)) {
             return generateEMI();
         }
+        else if (useCommand("VariableRecipes", player, 0, 1, args)) {
+            return true;
+        }
         else {
             return false;
         }
@@ -113,6 +119,7 @@ public class CommandManager implements TabExecutor {
                 add.put("EditItem", 0);
                 add.put("ResetCooldowns", 0);
                 add.put("GenerateEMI", 0);
+                add.put("VariableRecipes", 0);
             }
 
             else if (args.length == 2) {
@@ -339,14 +346,24 @@ public class CommandManager implements TabExecutor {
             }
             final JSONArray recipeCategory = (JSONArray) jsonObject.getOrDefault(slimefunItem.getId(), new JSONArray());
             if (slimefunItem instanceof AContainer aContainer) {
+                if (aContainer.getMachineRecipes().isEmpty()) {
+                    for (ItemStack input : aContainer.getDisplayRecipes()) {
+                        if (aContainer.getDisplayRecipes().indexOf(input) % 2 != 0 || checkRecipe(Collections.singletonList(input), null) || checkRecipe()) {
+                            continue;
+                        }
+                        final ItemStack output = aContainer.getDisplayRecipes().get(aContainer.getDisplayRecipes().indexOf(input) + 1);
+                        final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, null, null);
+                        recipeCategory.add(recipe);
+                    }
+                }
                 for (MachineRecipe machineRecipe : aContainer.getMachineRecipes()) {
                     if (checkRecipe(null, machineRecipe.getInput())) {
                         continue;
                     }
                     final ItemStack[] input = machineRecipe.getInput();
                     final ItemStack[] output = machineRecipe.getOutput();
-                    final int energyUsed = machineRecipe.getTicks() * aContainer.getEnergyConsumption() * -1;
-                    final JSONObject recipe = fillRecipe(input, output, energyUsed, machineRecipe.getTicks() * 2);
+                    final int energyUsed = (machineRecipe.getTicks() + 1) * aContainer.getEnergyConsumption() * -1;
+                    final JSONObject recipe = fillRecipe(input, output, energyUsed, (machineRecipe.getTicks() + 1) * 10);
                     recipeCategory.add(recipe);
                 }
             } else if (slimefunItem instanceof MultiBlockMachine multiBlockMachine) {
@@ -377,8 +394,8 @@ public class CommandManager implements TabExecutor {
                     }
                     final ItemStack input = machineFuel.getInput();
                     final ItemStack output = machineFuel.getOutput();
-                    final int energy = machineFuel.getTicks() * abstractEnergyProvider.getEnergyProduction();
-                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, energy, machineFuel.getTicks() * 2);
+                    final int energy = (machineFuel.getTicks() + 1) * abstractEnergyProvider.getEnergyProduction();
+                    final JSONObject recipe = fillRecipe(new ItemStack[]{input}, new ItemStack[]{output}, energy, (machineFuel.getTicks() + 1) * 10);
                     recipeCategory.add(recipe);
                 }
             } else if (slimefunItem instanceof AncientAltar ancientAltar) {
@@ -401,7 +418,7 @@ public class CommandManager implements TabExecutor {
                     ItemStack[] input = new ItemStack[listInput.size()];
                     input = listInput.toArray(input);
                     final ItemStack output = altarRecipe.getOutput();
-                    final JSONObject recipe = fillRecipe(input, new ItemStack[]{output}, null, 16);
+                    final JSONObject recipe = fillRecipe(input, new ItemStack[]{output}, null, 80);
                     recipeCategory.add(recipe);
                 }
             }
