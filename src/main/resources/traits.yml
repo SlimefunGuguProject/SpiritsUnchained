@@ -2,13 +2,13 @@ Better_Shears:
   name: "&f更好的剪刀"
   type: "Passive"
   lore:
-    - "75% 剪羊毛时获得双倍羊毛的机会!"
+    - "75% 几率在剪羊毛时获得双倍羊毛!"
 Clear_Effects:
   name: "&增强牛奶"
   cooldown: 10
   type: "Use Item"
   lore:
-    - "使用时将清除所有药剂效果!"
+    - "使用时将清除所有药水效果!"
 Eggpult:
   name: "&6鸡蛋布丁"
   cooldown: 30
@@ -19,37 +19,37 @@ Pig_Rancher:
   name: "&d养猪人"
   type: "Passive"
   lore:
-    - "成为一个养猪人"
-    - "骑着猪你会获得巨大的速度"
+    - "成为养猪人"
+    - "骑着猪时你会获得非常快的速度"
 Winged_Creature:
   name: "&a有翼生物"
   type: "Passive"
   lore:
-    - "获得被动缓降!"
+    - "获得缓降效果!"
 Aquatic_Creature:
   name: "&3水生生物"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "用管道动力适应水!"
+    - "获得潮涌核心效果!"
 Ink_Spray:
   name: "&0墨水喷射"
   cooldown: 30
   type: "Use Item"
   lore:
-    - "蒙蔽你周围的敌人!"
+    - "使你周围的玩家失明!"
 Speedy_Escape:
   name: "&e快速逃离"
   type: "Passive"
   lore:
-    - "获得猫的速度和逃避任何敌人!"
-    - "健康状况低于10%以下时触发"
+    - "获得飞快的速度以逃离敌人!"
+    - "血量低于10%时触发"
 Hops:
   name: "&e啤酒花"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "获得跳跃助力，像兔子一样跳跃!"
+    - "获得跳跃提升，像兔子一样跳跃!"
 Bee_Buddy:
   name: "&e蜜蜂的朋友"
   cooldown: 10
@@ -57,7 +57,7 @@ Bee_Buddy:
   lore:
     - "获取蜂蜜和蜂巢!"
 Webber:
-  name: "&f韦伯"
+  name: "&f织网"
   cooldown: 60
   type: "Use Item"
   lore:
@@ -69,29 +69,29 @@ Explode:
   lore:
     - "释放致命的爆炸!"
 Strong_Bones:
-  name: "&f强壮的骨骼"
+  name: "&f强壮骨骼"
   type: "Passive"
   lore:
-    - "强化你脆弱的骨骼，获得抵抗力!"
-    - "血量低于50%触发"
+    - "强化你脆弱的骨骼，获得抗性提升!"
+    - "血量低于50%时触发"
 Undead_Protection:
   name: "&2亡灵保护"
   type: "Passive"
   lore:
-    - "任何伤害的药水效果将会治疗你!"
-    - "(除了去不掉的药水)"
+    - "任何伤害药水效果都会治疗你!"
+    - "(除了滞留型药水)"
 What_Fall:
   name: "&a什么秋千"
   type: "Passive"
   lore:
-    - "减半你的坠落伤害"
+    - "你的摔落伤害减半"
 Group_Protection:
   name: "&c群体保护"
   type: "Passive"
   lore:
-    - "僵尸猪灵不会在攻击你的时候聚集在一起!"
+    - "攻击僵尸猪灵时不会激怒附近其他的僵尸猪灵!"
 Infest:
-  name: "&8骚扰"
+  name: "&8虫蚀"
   cooldown: 10
   type: "Use Item"
   lore:
@@ -102,28 +102,28 @@ Sly_Fox:
   lore:
     - "不再受到甜浆果、仙人掌等的伤害!"
 Echolocation:
-  name: "&9回声测距"
+  name: "&9超声波探测"
   cooldown: 20
   type: "Use Item"
   lore:
-    - "突出显示附近的所有怪物!"
+    - "标记出附近的所有怪物!"
 Frosty:
   name: "&b严寒"
   type: "Passive"
   lore:
-    - "不再冻结在粉状雪中!"
+    - "不再受到细雪的影响!"
 Stew_Maker:
   name: "&c炖肉制造商"
   cooldown: 15
   type: "Use Item"
   lore:
-    - "用炖肉填满一些的碗"
+    - "用炖肉填满空碗"
 Lava_Walker:
-  name: "&4熔岩行者"
+  name: "&4岩浆行者"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "暂时获得在熔岩上行走的能力!"
+    - "暂时获得在岩浆上行走的能力!"
 Scute_Shedding:
   name: "&2鳞甲脱落"
   type: "Passive"
@@ -131,36 +131,34 @@ Scute_Shedding:
     - "获得脱落的海龟鳞甲!"
     - "受到伤害时有机会掉落鳞甲"
 Villager_Friend:
-  name: "&a村民朋友"
+  name: "&a村民之友"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "与村民进行更好的交易!"
-    - "(给予村庄英雄效果5)"
+    - "与村民交易可获得优惠!"
 Poisonous_Thorns:
   name: "&2毒荆棘"
   type: "Passive"
   lore:
-    - "荆棘伤害有25%的几率造成中毒!"
+    - "荆棘伤害有25%的几率附加中毒效果!"
 Play_Dead:
   name: "&d装死"
   type: "Passive"
   lore:
-    - "装死"
-    - "让你隐形并获得重生!"
-    - "25%生命值触发"
+    - "获得隐形与生命恢复!"
+    - "血量低于25%时触发"
 Glow_Up:
   name: "&b焕发光彩"
   cooldown: 30
   type: "Use Item"
   lore:
-    - "制作任意项目框架并让附近的标志发光!"
+    - "让附近的物品展示框与告示牌发光!"
 Light_It_Up:
-  name: "&e点燃它"
+  name: "&e点亮它"
   cooldown: 30
   type: "Use Item"
   lore:
-    - "将岩浆块转化为蛙光!"
+    - "将岩浆块转化为蛙明灯!"
 High_Jump:
   name: "&6高跳"
   cooldown: 15
@@ -168,7 +166,7 @@ High_Jump:
   lore:
     - "把自己高高地抛向空中!"
 Morning_Gift:
-  name: "&e早晨礼物!"
+  name: "&e清晨礼物礼物!"
   type: "Passive"
   lore:
     - "睡觉后从你的猫那里获得一份礼物!"
@@ -176,15 +174,15 @@ Better_Food:
   name: "&f更好的食物!"
   type: "Passive"
   lore:
-    - "吃食物时获得30%几率获得双倍饥饿感!"
+    - "食用时有30%几率获得双倍饥饿度!"
 Spitter:
-  name: "&f呕吐鬼"
+  name: "&ftui"
   cooldown: 15
   type: "Use Item"
   lore:
     - "向你的敌人吐口水!"
 Dolphin_Swimmer:
-  name: "&3被海豚加持的游泳者"
+  name: "&3海豚泳者"
   type: "Passive"
   lore:
     - "在水下获得海豚的恩惠!"
@@ -194,16 +192,16 @@ Natural_Fisher:
   lore:
     - "在水下游泳时有机会捉到鱼!"
 Crunchy_Bamboo:
-  name: "&2松脆的竹子"
+  name: "&2可口的竹子"
   type: "Passive"
   lore:
     - "获得吃竹子的能力!"
 Goats_Instrument:
-  name: "&8山羊器具"
+  name: "&8山羊乐器"
   cooldown: 5
   type: "Use Item"
   lore:
-    - "随机的播放一个山羊角声音!"
+    - "随机播放山羊角音效!"
 Poison_Spray:
   name: "&2毒药喷雾"
   cooldown: 30
@@ -214,40 +212,39 @@ Strange_Secrets:
   name: "&d奇怪的秘密"
   type: "Passive"
   lore:
-    - "将黄金转化为奇怪的冥胶!"
+    - "将黄金转化为奇怪的下界粘液!"
 Multishoot:
   name: "&8多重射击"
   type: "Passive"
   lore:
-    - "获得多重射击的机会...."
-    - "为你的弓!"
+    - "你的弓现在有几率多重射击了"
 Crit_hit:
   name: "&6暴击"
   cooldown: 60
   type: "Use Item"
   lore:
-    - "在一小段时间内获得力量3!"
+    - "在一段时间内获得力量3效果!"
 Mini_Teleport:
-  name: "&5迷你传送点"
+  name: "&5迷你传送"
   cooldown: 20
   type: "Use Item"
   lore:
-    - "像吃水果一样随机传送!"
+    - "像吃紫颂果一样随机传送!"
 Nautral_Thorns:
   name: "&6自然荆棘"
   type: "Passive"
   lore:
-    - "获得自然的荆棘效果!"
+    - "获得荆棘效果!"
 Hunger_Hit:
   name: "&2饥饿来袭"
   type: "Passive"
   lore:
-    - "攻击敌人时有30%的几率造成饥饿!"
+    - "攻击敌人时有30%几率施加饥饿效果!"
 Slow_Shot:
   name: "&3慢镜头"
   type: "Passive"
   lore:
-    - "射击敌人时有30%的几率造成迟缓!"
+    - "射击敌人时有30%的几率施加缓慢!"
 Sleep_No_More:
   name: "&9不再睡觉"
   cooldown: 600
@@ -258,7 +255,7 @@ Blazing_Thorns:
   name: "&c燃烧的荆棘"
   type: "Passive"
   lore:
-    - "有25%的几率点燃攻击你的人!"
+    - "有25%几率点燃攻击你的人!"
 Magma_Trap:
   name: "&4岩浆陷阱"
   cooldown: 120
@@ -289,7 +286,7 @@ Targeted_Teleport:
   lore:
     - "向你看的方向传送!"
 Another_Chance:
-  name: "&e又一次机会"
+  name: "&e多一次机会"
   type: "Passive"
   lore:
     - "死后的又一次机会!"
@@ -322,7 +319,7 @@ Skull_Fire:
   cooldown: 60
   type: "Use Item"
   lore:
-    - "发射一个增强的枯萎骷髅"
+    - "发射一个增强的凋灵骷髅头"
 Dragons_Breath:
   name: "&d龙息"
   cooldown: 60
@@ -334,4 +331,4 @@ Dark_Aura:
   cooldown: 60
   type: "Use Item"
   lore:
-    - "给所有附近的玩家失明和缓慢"
+    - "给所有附近的玩家失明和缓慢效果"

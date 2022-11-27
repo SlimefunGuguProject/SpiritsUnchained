@@ -250,7 +250,7 @@ messages:
     not_enough_progress: "{tier_color_and_mob_type}灵魂的驯化进度不足! ({progress}/{required_progress})"
     error: "{mob_type}的特性遇到了一些问题，请在问题追踪器中汇报!"
     cooldown:
-      strong_bones: "&f强壮的骨骼&f已触发! &7(冷却时间: 30秒)"
-      play_dead: "&dPlay Dead&f已触发! &7(冷却时间: 1 分钟)"
-      speedy_escape: "&eSpeedy Escape&f已触发! &7(冷却时间: 1 分钟)"
-      morning_gift: "&eMorning Gift&f已触发! &7(冷却时间: 20 分钟)"
+      strong_bones: "&f强壮骨骼&f已触发! &7(冷却时间: 30秒)"
+      play_dead: "&d装死&f已触发! &7(冷却时间: 1分钟)"
+      speedy_escape: "&e快速逃离&f已触发! &7(冷却时间: 1分钟)"
+      morning_gift: "&e清晨礼物&f已触发! &7(冷却时间: 20分钟)"

@@ -214,55 +214,55 @@ SLIME:
 ZOMBIFIED_PIGLIN:
   pages:
     0:
-      - "A undead version of the piglins found in the nether, these occur naturally there and normal piglins become them in the overworld."
+      - "在下界发现的不死形态的猪灵，它们会自然生成。主世界中的猪灵会逐渐转换成僵尸猪灵。"
 SILVERFISH:
   pages:
     0:
-      - "A pesky mob found deep underground with a love of strongholds and stone."
+      - "一种在地下发现的烦人的生物，非常喜欢挖掘并藏在石头中。"
 FOX:
   pages:
     0:
-      - "A sneaky creature with a love for chickens."
+      - "一种非常喜欢只因的鬼祟生物。"
 BAT:
   pages:
     0:
-      - "A loud flying creature found deep underground in dark places."
+      - "一种吵闹的飞行生物，可以在地下的阴暗处找到。"
 SNOWMAN:
   pages:
     0:
-      - "A unnatural occurrence, created by combining snow and carved pumpkins, with a funny face beneath its Hat."
+      - "非自然生成的生物，使用雕刻过的南瓜与雪块来召唤，在头盔下有一张搞笑的脸。"
 MUSHROOM_COW:
   pages:
     0:
-      - "A rare phenomenon, only found on the mycelium islands, legends say it changes appearance when striken by lightning."
+      - "一种稀有的生物，只能在蘑菇岛上找到。传说它会在被闪电击中后改变外观。"
 STRIDER:
   pages:
     0:
-      - "A unique inhabitant of the nether, the only seen to be  living universally in lava."
+      - "下界的原住民，似乎只能在岩浆附近看到它们。"
 TURTLE:
   pages:
     0:
-      - "A passive mob with a love of sea grass, its fragile eggs crack under almost any pressure."
+      - "一种非常喜欢海草的的被动生物，它脆弱的蛋会在几乎任何压力下破碎。"
 VILLAGER:
   pages:
     0:
-      - "A intelligent mob, one of few, known to deal in terrible trades until saved from the zombie illness."
+      - "一种智慧的生物，通常是奸商，除了那些刚被治愈的。"
 WANDERING_TRADER:
   pages:
     0:
-      - "A cousin of the villager, afraid of what lurks at night it has learned to brew invisibility potions."
+      - "村民的兄弟，害怕在夜晚潜伏的东西，因此学会了酿造隐身药水。"
 PUFFERFISH:
   pages:
     0:
-      - "A poisonous swimmer with a temper."
+      - "剧毒的且有脾气的水生生物"
 AXOLOTL:
   pages:
     0:
-      - "A intelligent swimmer, one that plays dead when near death, with a love of fish."
+      - "智慧水生生物，会装死来躲避危险，非常喜欢鱼。"
 GLOW_SQUID:
   pages:
     0:
-      - "A curiosity of the ocean, its special ink used to illuminate signs and item frames."
+      - "海洋中的神奇物种，它的墨囊可以点亮告示牌与物品展示框。"
 FROG:
   pages:
     0:
