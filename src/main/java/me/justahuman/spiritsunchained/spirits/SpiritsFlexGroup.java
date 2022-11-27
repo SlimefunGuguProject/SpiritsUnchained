@@ -7,7 +7,6 @@ import io.github.thebusybiscuit.slimefun4.core.guide.SlimefunGuideMode;
 import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
-import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.bakedlibs.dough.items.CustomItemStack;
 import me.mrCookieSlime.CSCoreLibPlugin.general.Inventory.ChestMenu;
@@ -17,6 +16,7 @@ import me.justahuman.spiritsunchained.utils.PlayerUtils;
 import me.justahuman.spiritsunchained.slimefun.Groups;
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
 
+import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import net.kyori.adventure.text.Component;
 
 import org.bukkit.NamespacedKey;
@@ -344,7 +344,7 @@ public class SpiritsFlexGroup extends FlexItemGroup {
         final ItemStack itemStack = new ItemStack(Material.FIREWORK_STAR);
         final ItemMeta itemMeta = itemStack.getItemMeta();
         final ChatColor chatColor = SpiritUtils.tierColor(definition.getTier());
-        final String spiritType  = ChatUtils.humanize(definition.getType().name());
+        final String spiritType = EntityTypeHelper.getName(definition.getType());
 
         itemMeta.displayName(Component.text(name("spirit_item").replace("{tier_color}", chatColor.toString()).replace("{mob_type}", spiritType)));
         ((FireworkEffectMeta) itemMeta).setEffect(SpiritUtils.effectColor(definition.getType()));

@@ -51,7 +51,7 @@ public class ElectricSpiritWriter extends SlimefunItem implements EnergyNetCompo
 
     private static final Map<BlockPosition, Integer> progress = new HashMap<>();
 
-    private static final ItemStack PROGRESS_ITEM = new CustomItemStack(Material.BOOK, "&7Progress: 0%");
+    private static final ItemStack PROGRESS_ITEM = new CustomItemStack(Material.BOOK, "&7进度: 0%");
 
     @ParametersAreNonnullByDefault
     public ElectricSpiritWriter(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {

@@ -12,6 +12,7 @@ import me.justahuman.spiritsunchained.utils.ParticleUtils;
 import me.justahuman.spiritsunchained.utils.PlayerUtils;
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
 
+import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.EntityType;
@@ -129,6 +130,9 @@ public class PassOnListeners implements Listener {
         toDrop.setAmount(new Random().nextInt(min, max + 1));
         PlayerUtils.addOrDropItem(player, toDrop);
         ParticleUtils.passOnAnimation(player.getLocation());
-        player.sendMessage(SpiritUtils.getTranslation("messages.spirits.pass_on").replace("{tier_color}", String.valueOf(SpiritUtils.tierColor(tier))).replace("{spirit_name}", ChatUtils.humanize(type.name())));
+        player.sendMessage(SpiritUtils.getTranslation("messages.spirits.pass_on")
+            .replace("{tier_color}", String.valueOf(SpiritUtils.tierColor(tier)))
+            .replace("{spirit_name}", EntityTypeHelper.getName(type))
+        );
     }
 }
