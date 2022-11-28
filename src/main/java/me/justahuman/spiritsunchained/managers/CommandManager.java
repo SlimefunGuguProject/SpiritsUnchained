@@ -198,7 +198,12 @@ public class CommandManager implements TabExecutor {
                     case "2" -> " II";
                     default -> " I";
                 };
-                final String slimefunVersion = ChatUtils.humanize(material.name()).replace("Chiseled Quartz", "Charged Core").replace("Quartz", "Charged Quartz").replace("Block", "") + tier;
+                final String slimefunVersion = ChatUtils.humanize(material.name())
+                    .replace("Chiseled Quartz", "已充能的核心")
+                    .replace("Quartz Stairs", "已充能的楼梯")
+                    .replace("Quartz Block", "已充能的石英")
+                    .replace("Quartz Pillar", "已充能的柱子")
+                    + tier;
                 player.sendMessage(ChatColors.color("&6" + Collections.frequency(altarMap.values(), material) + " &e" + slimefunVersion));
             }
         }
