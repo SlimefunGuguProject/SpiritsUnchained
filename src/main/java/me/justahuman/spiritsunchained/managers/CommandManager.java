@@ -353,7 +353,7 @@ public class CommandManager implements TabExecutor {
             if (slimefunItem instanceof AContainer aContainer) {
                 if (aContainer.getMachineRecipes().isEmpty()) {
                     for (ItemStack input : aContainer.getDisplayRecipes()) {
-                        if (aContainer.getDisplayRecipes().indexOf(input) % 2 != 0 || checkRecipe(Collections.singletonList(input), null) || checkRecipe()) {
+                        if (aContainer.getDisplayRecipes().indexOf(input) % 2 != 0 || checkRecipe(Collections.singletonList(input), null) || checkRecipe(Collections.singletonList(aContainer.getDisplayRecipes().get(aContainer.getDisplayRecipes().indexOf(input) + 1)), null)) {
                             continue;
                         }
                         final ItemStack output = aContainer.getDisplayRecipes().get(aContainer.getDisplayRecipes().indexOf(input) + 1);
@@ -362,7 +362,7 @@ public class CommandManager implements TabExecutor {
                     }
                 }
                 for (MachineRecipe machineRecipe : aContainer.getMachineRecipes()) {
-                    if (checkRecipe(null, machineRecipe.getInput())) {
+                    if (checkRecipe(null, machineRecipe.getInput()) || checkRecipe(null, machineRecipe.getOutput())) {
                         continue;
                     }
                     final ItemStack[] input = machineRecipe.getInput();
@@ -374,7 +374,7 @@ public class CommandManager implements TabExecutor {
             } else if (slimefunItem instanceof MultiBlockMachine multiBlockMachine) {
                 final List<ItemStack[]> recipes = multiBlockMachine.getRecipes();
                 for (ItemStack[] input : recipes) {
-                    if (recipes.indexOf(input) % 2 != 0 || checkRecipe(null, input)) {
+                    if (recipes.indexOf(input) % 2 != 0 || checkRecipe(null, input) || checkRecipe(null, recipes.get(recipes.indexOf(input) + 1))) {
                         continue;
                     }
                     final ItemStack[] output = recipes.get(recipes.indexOf(input) + 1);
@@ -384,7 +384,7 @@ public class CommandManager implements TabExecutor {
             } else if (slimefunItem instanceof GoldPan goldPan) {
                 final List<ItemStack> recipes = goldPan.getDisplayRecipes();
                 for (ItemStack input : recipes) {
-                    if (recipes.indexOf(input) % 2 != 0 || checkRecipe(Collections.singletonList(input), null)) {
+                    if (recipes.indexOf(input) % 2 != 0 || checkRecipe(Collections.singletonList(input), null) || checkRecipe(Collections.singletonList(recipes.get(recipes.indexOf(input) + 1)), null)) {
                         continue;
                     }
                     final ItemStack output = recipes.get(recipes.indexOf(input) + 1);
@@ -394,7 +394,7 @@ public class CommandManager implements TabExecutor {
             } else if (slimefunItem instanceof AbstractEnergyProvider abstractEnergyProvider) {
                 final Set<MachineFuel> recipes = abstractEnergyProvider.getFuelTypes();
                 for (MachineFuel machineFuel : recipes) {
-                    if (checkRecipe(Collections.singletonList(machineFuel.getInput()), null)) {
+                    if (checkRecipe(Collections.singletonList(machineFuel.getInput()), null) || checkRecipe(Collections.singletonList(machineFuel.getOutput()), null)) {
                         continue;
                     }
                     final ItemStack input = machineFuel.getInput();
@@ -406,7 +406,7 @@ public class CommandManager implements TabExecutor {
             } else if (slimefunItem instanceof AncientAltar ancientAltar) {
                 final List<AltarRecipe> recipes = ancientAltar.getRecipes();
                 for (AltarRecipe altarRecipe : recipes) {
-                    if (checkRecipe(altarRecipe.getInput(), null)) {
+                    if (checkRecipe(altarRecipe.getInput(), null) || checkRecipe(Collections.singletonList(altarRecipe.getOutput()), null)) {
                         continue;
                     }
                     final List<ItemStack> incorrectOrder = altarRecipe.getInput();
