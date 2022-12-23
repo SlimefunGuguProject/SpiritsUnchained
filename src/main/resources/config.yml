@@ -37,3 +37,6 @@ options:
 
   # 刷怪笼生成的生物是否能释放出灵魂
   spawner-spirits: true
+
+  # 是否只为生存模式玩家生成灵魂
+  require-survival: true

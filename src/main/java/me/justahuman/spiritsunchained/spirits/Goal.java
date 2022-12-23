@@ -2,17 +2,14 @@ package me.justahuman.spiritsunchained.spirits;
 
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
-import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 
 import lombok.Getter;
 
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 
-import me.justahuman.spiritsunchained.utils.SpiritUtils;
 import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
-import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -26,6 +23,10 @@ public class Goal {
     private final String requiredType;
     private final ItemStack requiredStack;
     private final int amount;
+    private static final ItemStack INVALID_ITEM = new CustomItemStack(
+            Material.BARRIER,
+            "&a无效的物品!请检查配置是否正确."
+    );
 
     public Goal(String goalType, String requiredType, int amount) {
         this.goalType = goalType;
@@ -105,7 +106,7 @@ public class Goal {
         if (goalType.equals("Item")) {
             toReturn = new ItemStack(Material.valueOf(requiredType));
         } else if (goalType.equals("SlimefunItem")) {
-            toReturn = SlimefunItem.getById(requiredType).getItem().clone();
+            toReturn = SlimefunItem.getById(requiredType) != null ? SlimefunItem.getById(requiredType).getItem().clone() : INVALID_ITEM;
         }
         return toReturn;
     }
