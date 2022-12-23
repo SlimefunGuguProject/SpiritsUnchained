@@ -140,18 +140,21 @@ names:
       lore:
         - ""
         - "&7可以自动捕捉灵魂"
+        - "&7捕捉机器周围10格内的灵魂"
         - ""
     electric_spirit_bottler:
       name: "&a电动灵魂装瓶机"
       lore:
         - ""
         - "&7可以自动将灵魂装入瓶中"
+        - "&7装瓶机器周围10格内的灵魂"
         - ""
     electric_spirit_writer:
       name: "&a电动灵魂书写机"
       lore:
         - ""
         - "&7可以自动将灵魂写入灵魂之书中"
+        - "&7向机器中放入捕捉到的灵魂与灵魂之书"
         - ""
     altars:
       lore:
