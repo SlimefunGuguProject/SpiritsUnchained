@@ -17,6 +17,7 @@ import me.justahuman.spiritsunchained.utils.LogUtils;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanBuildsUpdaterWrapper;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -72,10 +73,11 @@ public class SpiritsUnchained extends JavaPlugin implements SlimefunAddon {
             Researches.init();
         }
 
-        final Metrics metrics = new Metrics(this, 16817);
-
-        this.getCommand("spirits").setExecutor(commandManager);
-    }
+        new Metrics(this, 16817);
+        final PluginCommand pluginCommand = this.getCommand("spirits");
+        if (pluginCommand != null) {
+            pluginCommand.setExecutor(commandManager);
+        }}
 
     @Nonnull
     @Override

@@ -5,7 +5,6 @@ import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
-
 import io.slimefunguguproject.spiritsunchained.TranslationUtil;
 import me.justahuman.spiritsunchained.SpiritsUnchained;
 import me.justahuman.spiritsunchained.implementation.mobs.AbstractCustomMob;
@@ -15,11 +14,8 @@ import me.justahuman.spiritsunchained.slimefun.ItemStacks;
 import me.justahuman.spiritsunchained.spirits.SpiritDefinition;
 import me.justahuman.spiritsunchained.utils.Keys;
 import me.justahuman.spiritsunchained.utils.SpiritUtils;
-
 import net.guizhanss.guizhanlib.minecraft.helper.entity.EntityTypeHelper;
-import net.md_5.bungee.api.ChatMessageType;
-import net.md_5.bungee.api.chat.TextComponent;
-
+import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Statistic;
@@ -48,11 +44,14 @@ public class IdentifyingGlassListener implements Listener {
         }
 
         for (Entity currentEntity : SpiritUtils.getLookingList(player)) {
-            if (currentEntity.getType() != EntityType.ALLAY) continue;
+            if (!(currentEntity instanceof Allay allay)) {
+                continue;
+            }
+
             final AbstractCustomMob<?> maybeSpirit = SpiritsUnchained.getSpiritEntityManager().getCustomClass(currentEntity, null);
             if (maybeSpirit instanceof UnIdentifiedSpirit && !PersistentDataAPI.getBoolean(currentEntity, Keys.spiritIdentified)) {
                 PersistentDataAPI.setBoolean(currentEntity, Keys.spiritIdentified, true);
-                maybeSpirit.reveal((Allay) currentEntity, player);
+                maybeSpirit.reveal(allay, player);
             } else if (maybeSpirit instanceof Spirit spirit) {
                 final SpiritDefinition definition = spirit.getDefinition();
                 final ChatColor tierColor = SpiritUtils.tierColor(definition.getTier());
@@ -63,7 +62,7 @@ public class IdentifyingGlassListener implements Listener {
                     .replace("{state_color}", stateColor.toString())
                     .replace("{state_name}", TranslationUtil.getSpiritState(PersistentDataAPI.getString(currentEntity, Keys.spiritStateKey)))
                     .replace("{tier}", String.valueOf(definition.getTier()));
-                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(actionBarMessage));
+                player.sendActionBar(Component.text(actionBarMessage));
             }
         }
     }
