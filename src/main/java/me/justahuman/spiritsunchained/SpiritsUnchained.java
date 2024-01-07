@@ -14,7 +14,7 @@ import me.justahuman.spiritsunchained.managers.SpiritsManager;
 import me.justahuman.spiritsunchained.slimefun.ItemStacks;
 import me.justahuman.spiritsunchained.slimefun.Researches;
 import me.justahuman.spiritsunchained.utils.LogUtils;
-import net.guizhanss.guizhanlibplugin.updater.GuizhanBuildsUpdaterWrapper;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.command.PluginCommand;
@@ -65,8 +65,7 @@ public class SpiritsUnchained extends JavaPlugin implements SlimefunAddon {
         Setup.INSTANCE.init();
 
         if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
-            GuizhanBuildsUpdaterWrapper.start(this, getFile(), "SlimefunGuguProject", "SpiritsUnchained", "master",
-                false);
+            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "SpiritsUnchained", "master");
         }
 
         if (getConfig().getBoolean("options.enable-researches")) {
@@ -77,7 +76,8 @@ public class SpiritsUnchained extends JavaPlugin implements SlimefunAddon {
         final PluginCommand pluginCommand = this.getCommand("spirits");
         if (pluginCommand != null) {
             pluginCommand.setExecutor(commandManager);
-        }}
+        }
+    }
 
     @Nonnull
     @Override
