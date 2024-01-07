@@ -6,6 +6,8 @@ import javax.annotation.Nonnull;
 import java.util.Locale;
 
 public final class TranslationUtil {
+    private TranslationUtil() {
+    }
 
     @Nonnull
     public static String getSpiritState(@Nonnull String state) {
